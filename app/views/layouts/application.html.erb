@@ -9,7 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <%= render 'layouts/navbar' %>
+
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+    Have fun ! <%= link_to '©︎', new_admin_session_path %> 2020 Nanimiru
+  </footer>
+
 </html>
