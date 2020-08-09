@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+
+		<%= attachment_image_tag @photo, :image, size:'300x300', format: 'jpeg' %>
+
+		<%= @photo.text %>
+
+		<% if @photo.is_active == true %>
+			<%= link_to 'Hide', admin_photo_path, method: :PUT %>
+		<% else %>
+			<%= link_to 'Open', admin_photo_path, method: :PUT %>
+		<% end %>
+	</div>
+</div>
