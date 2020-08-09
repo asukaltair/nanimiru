@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 	}
 
 	devise_for :users, controllers: {
-		sessions:      'public/sessions',
+		sessions: 'public/sessions',
 		passwords:     'public/passwords',
-		registrations: 'public/registrations'
+		registrations: 'public/registrations',
 	}
 
 	namespace :admin do
@@ -24,6 +24,11 @@ Rails.application.routes.draw do
 		get 'users/:name' => 'users#show', as: 'user'
 		get 'users/:name/edit' => 'users#edit', as: 'user_edit'
 		patch 'users/:name' => 'users#update'
+
+		get 'users/:name/followings' => 'relationships#followings', as: 'user_followings'
+		get 'users/:name/followers' => 'relationships#followers', as: 'user_followers'
+		post 'follow/:name' => 'relationships#create', as: 'follow'
+		delete 'unfollow/:name' => 'relationships#destroy', as: 'unfollow'
 
 	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

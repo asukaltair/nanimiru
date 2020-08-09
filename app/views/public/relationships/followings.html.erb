@@ -1,0 +1,12 @@
+<div class="container">
+	followings
+
+	<div class="row">
+		<% @users.each do |user| %>
+			<div class="col-md-3">
+				<%= attachment_image_tag user, :image, size:'50x50', format: 'jpeg', fallback: 'no-user-image.png' %>
+				<%= user.name %>
+			</div>
+		<% end %>
+	</div>
+</div>

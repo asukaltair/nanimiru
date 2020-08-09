@@ -4,6 +4,21 @@
 			<%= attachment_image_tag @user, :image, size:'50x50', format: 'jpeg', fallback: 'no-user-image.png' %>
 			<%= @user.name %>
 			<%= @user.introduction %>
+			<%= link_to user_followings_path do %>
+				<%= @user.follower.count %> followings
+			<% end %>
+			<%= link_to user_followers_path do %>
+				<%= @user.followed.count %> followers
+			<% end %>
+			<% if @user == current_user %>
+				<%= link_to 'Edit', user_edit_path, class: "btn btn-success" %>
+			<% else %>
+				<% if current_user.following?(@user) %>
+					<%= link_to 'Unfollow', unfollow_path(followed_id: @user.id), method: :DELETE, class: "btn btn-success" %>
+				<% else %>
+					<%= link_to 'Follow', follow_path(followed_id: @user.id), method: :POST, class: "btn btn-success" %>
+				<% end %>
+			<% end %>
 		</div>
 		<div class="col-md-8">
 			<div class="row">

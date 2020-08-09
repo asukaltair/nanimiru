@@ -11,15 +11,19 @@
         <li class="nav-item active">
           <%= link_to 'コメント一覧', '#' %>
         </li>
-        <li class="nav-item active">
-          <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
-        </li>
+        <% if admin_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item active">
+            <%= link_to 'ログイン', new_admin_session_path %>
+          </li>
+        <% end %>
       </ul>
   <% else %>
     <% if user_signed_in? %>
-      <%= link_to root_path do %>
         <%= image_tag 'nanimiru-logo.png', size: "150x50" %>
-      <% end %>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <%= link_to 'マイページ', '#' %>
