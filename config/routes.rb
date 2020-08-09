@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 	devise_for :admins, controllers: {
-		sessions:      'admins/sessions',
-		passwords:     'admins/passwords',
-		registrations: 'admins/registrations'
+		sessions:      'admin/sessions',
+		passwords:     'admin/passwords',
+		registrations: 'admin/registrations'
 	}
 
 	devise_for :users, controllers: {
@@ -11,6 +11,13 @@ Rails.application.routes.draw do
 		passwords:     'public/passwords',
 		registrations: 'public/registrations'
 	}
+
+	namespace :admin do
+
+		resources :users, only: [:index, :show]
+		put 'users/:id' => 'users#update', as: 'user_update'
+
+	end
 
 	scope module: :public do
 
