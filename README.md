@@ -21,6 +21,12 @@
 自然を見て癒されたいなと感じているとき
 
 ## 設計書
+WBS:https://docs.google.com/spreadsheets/d/1Ti3XB1pwVfFnkq2H_JdjUIy2cFIH5fLTtWRbe8awLgc/edit?usp=sharing
+ERD:https://app.lucidchart.com/invitations/accept/2304ad61-2adc-4ca2-985b-8b2ca11005fc
+テーブル定義書:https://docs.google.com/spreadsheets/d/1fMPdXB2MuIa-pX9QR-me3pp6Tb6nhOuAk6bzgUXvnwU/edit?usp=sharing
+flowchart:https://docs.google.com/presentation/d/19yV9sdPEQBNcON9aQ-anZeO1h9UVdTcle6gHy3v3BwI/edit?usp=sharing
+wireframe:https://www.figma.com/file/XfMLwkMWzdww42IFKM9bQq/nanimiru_wireframe?node-id=123%3A0
+アプリケーション詳細設計書:https://docs.google.com/spreadsheets/d/1kDP6Ag3ALiEDgxd2LBMBFYQdEjnIBweq88OrQUc7RFA/edit?usp=sharing
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1J1GzMrnRjb2c8qfIMXFtbRuelrmFwNNzh5yUO3vO3_o/edit?usp=sharing
