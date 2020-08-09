@@ -1,0 +1,20 @@
+<div class="container">
+
+	<%= form_with model: @user, url: user_path, local: true do |f| %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :introduction %>
+		<%= f.text_area :introduction %>
+
+		<%= f.label :email %>
+		<%= f.email_field :email %>
+
+		<%= attachment_image_tag @user, :image, size:'100x100', format: 'jpeg', fallback: 'no-user-image.png' %>
+		<%= f.attachment_field :image %>
+
+		<%= f.submit 'Edit' %>
+
+	<% end %>
+</div>
