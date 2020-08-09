@@ -23,6 +23,9 @@ Rails.application.routes.draw do
 
 	scope module: :public do
 
+		root 'photos#index'
+		resources :photos, only: [:new, :create, :show, :edit, :update, :destroy]
+
 		get 'users/:name' => 'users#show', as: 'user'
 		get 'users/:name/edit' => 'users#edit', as: 'user_edit'
 		patch 'users/:name' => 'users#update'

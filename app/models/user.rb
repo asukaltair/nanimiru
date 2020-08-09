@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
 	attachment :image
 
+	has_many :photos
+
 	# フォローされている人
 	has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
 	has_many :follower_user, through: :followed, source: :follower

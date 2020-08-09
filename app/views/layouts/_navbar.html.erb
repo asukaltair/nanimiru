@@ -23,13 +23,15 @@
       </ul>
   <% else %>
     <% if user_signed_in? %>
+      <%= link_to root_path do %>
         <%= image_tag 'nanimiru-logo.png', size: "150x50" %>
+      <% end %>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <%= link_to 'マイページ', '#' %>
+          <%= link_to 'マイページ', user_path(current_user.name) %>
         </li>
         <li class="nav-item">
-          <%= link_to '新規投稿', '#' %>
+          <%= link_to '新規投稿', new_photo_path %>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#">検索<span class="sr-only">(current)</span></a>
@@ -45,7 +47,7 @@
       <%= image_tag 'nanimiru-logo.png', size: "150x50" %>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <%= link_to "写真一覧", '#' %>
+          <%= link_to "写真一覧", root_path %>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#">検索<span class="sr-only">(current)</span></a>
