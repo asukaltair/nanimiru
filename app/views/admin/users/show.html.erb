@@ -4,6 +4,18 @@
 			<%= attachment_image_tag @user, :image, size:'50x50', format: 'jpeg', fallback: 'no-user-image.png' %>
 			<%= @user.name %>
 			<%= @user.introduction %>
+			<%= link_to user_followings_path do %>
+				<%= @user.follower.count %> followings
+			<% end %>
+			<%= link_to user_followers_path do %>
+				<%= @user.followed.count %> followers
+			<% end %>
+			<% if @user.is_active == true %>
+				<!-- putは置換、patchは更新・変更・修正 -->
+				<%= link_to 'Hide', admin_user_update_path, method: :put, class: "btn btn-success" %>
+			<% else %>
+				<%= link_to 'Open', admin_user_update_path, method: :put, class: "btn btn-success" %>
+			<% end %>
 		</div>
 		<div class="col-md-8">
 			<div class="row">

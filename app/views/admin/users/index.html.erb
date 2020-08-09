@@ -9,7 +9,14 @@
 				</td>
 				<td><%= user.name %></td>
 				<td><%= 'how many posts' %></td>
-				<td>followings/followers</td>
+				<td>
+					<%= link_to admin_user_followings_path(user) do %>
+						<%= user.follower.count %> followings
+					<% end %>
+					<%= link_to admin_user_followers_path(user) do %>
+						<%= user.followed.count %> followers
+					<% end %>
+				</td>
 			</tr>
 		<% end %>
 </table>

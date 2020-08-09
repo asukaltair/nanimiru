@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
 		resources :users, only: [:index, :show]
 		put 'users/:id' => 'users#update', as: 'user_update'
+		get 'users/:id/followings' => 'relationships#followings', as: 'user_followings'
+		get 'users/:id/followers' => 'relationships#followers', as: 'user_followers'
 
 	end
 
