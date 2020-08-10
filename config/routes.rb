@@ -24,7 +24,9 @@ Rails.application.routes.draw do
 	scope module: :public do
 
 		root 'photos#index'
-		resources :photos, only: [:new, :create, :show, :edit, :update, :destroy]
+		resources :photos, only: [:new, :create, :show, :edit, :update, :destroy] do
+			resources :comments, only: [:create, :edit, :update, :destroy]
+		end
 
 		get 'users/:name' => 'users#show', as: 'user'
 		get 'users/:name/edit' => 'users#edit', as: 'user_edit'

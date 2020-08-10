@@ -1,14 +1,32 @@
 <div class="container">
 	<div class="row">
+		<div class="col-md-5">
+			<%= attachment_image_tag @photo, :image, size:'300x300', format: 'jpeg' %>
 
-		<%= attachment_image_tag @photo, :image, size:'300x300', format: 'jpeg' %>
+			<%= @photo.text %>
 
-		<%= @photo.text %>
+			<% if @photo.user_id == current_user.id %>
+				<%= link_to 'Edit', edit_photo_path %>
+				<%= link_to 'Destroy', photo_path, method: :delete, data: {confirm: "Are you sure?"} %>
+			<% end %>
+		</div>
+		<div class="col-md-7">
+			<% @comments.each do |comment| %>
+				<%= comment.comment %>
 
-		<% if @photo.user_id == current_user.id %>
-			<%= link_to 'Edit', edit_photo_path %>
-			<%= link_to 'Destroy', photo_path, method: :delete, data: {confirm: "Are you sure?"} %>
-		<% end %>
+				<% if comment.user_id == current_user.id %>
+					<%= link_to 'Edit', edit_photo_comment_path(comment.photo, comment) %>
+					<%= link_to 'Destroy', photo_comment_path(comment.photo, comment), method: :delete, data: {confirm: "Are you sure?"} %>
+				<% end %>
+			<% end %>
+
+			<%= form_with model: [@photo, @comment], local: true do |f| %>
+				<%= f.label :comment %>
+				<%= f.text_area :comment %>
+
+				<%= f.submit 'Post' %>
+			<% end %>
+		</div>
 
 	</div>
 </div>
