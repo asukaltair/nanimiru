@@ -6,8 +6,9 @@ class User < ApplicationRecord
 
 	attachment :image
 
-	has_many :photos
-	has_many :comments
+	has_many :photos, dependent: :destroy
+	has_many :comments, dependent: :destroy
+	has_many :favorites, dependent: :destroy
 
 	# フォローされている人
 	has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
