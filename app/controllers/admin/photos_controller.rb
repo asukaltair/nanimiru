@@ -8,6 +8,7 @@ class Admin::PhotosController < ApplicationController
 	end
 
 	def show
+		@comments = @photo.comments
 	end
 
 	def update

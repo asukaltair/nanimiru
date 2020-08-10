@@ -3,13 +3,13 @@
       <%= image_tag 'nanimiru-logo.png', size: "150x50" %>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <%= link_to "写真一覧", root_path %>
+          <%= link_to "写真一覧", admin_root_path %>
         </li>
         <li class="nav-item">
           <%= link_to 'ユーザー一覧', admin_users_path %>
         </li>
         <li class="nav-item active">
-          <%= link_to 'コメント一覧', '#' %>
+          <%= link_to 'コメント一覧', admin_comments_path %>
         </li>
         <% if admin_signed_in? %>
           <li class="nav-item active">

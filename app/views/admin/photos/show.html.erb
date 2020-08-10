@@ -1,14 +1,25 @@
 <div class="container">
 	<div class="row">
+		<div class="col-md-5">
+			<%= attachment_image_tag @photo, :image, size:'300x300', format: 'jpeg' %>
 
-		<%= attachment_image_tag @photo, :image, size:'300x300', format: 'jpeg' %>
+			<%= @photo.text %>
 
-		<%= @photo.text %>
-
-		<% if @photo.is_active == true %>
-			<%= link_to 'Hide', admin_photo_path, method: :PUT %>
-		<% else %>
-			<%= link_to 'Open', admin_photo_path, method: :PUT %>
-		<% end %>
+			<% if @photo.is_active == true %>
+				<%= link_to 'Hide', admin_photo_path, method: :PUT %>
+			<% else %>
+				<%= link_to 'Open', admin_photo_path, method: :PUT %>
+			<% end %>
+		</div>
+		<div class="col-md-7">
+			<% @comments.each do |comment| %>
+				<%= comment.comment %>
+				<% if comment.is_active == true %>
+					<%= link_to 'Hide', admin_photo_comment_path(comment.photo, comment), method: :PUT %>
+				<% else %>
+					<%= link_to 'Open', admin_photo_comment_path(comment.photo, comment), method: :PUT %>
+				<% end %>
+			<% end %>
+		</div>
 	</div>
 </div>

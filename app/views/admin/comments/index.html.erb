@@ -1,0 +1,12 @@
+<div class="container">
+	comments
+
+	<div class="row">
+		<% @comments.each do |comment| %>
+			<div class="col-md-3">
+				<%= attachment_image_tag comment.photo, :image, size:'50x50', format: 'jpeg', fallback: 'no-user-image.png' %>
+				<%= comment.comment %>
+			</div>
+		<% end %>
+	</div>
+</div>
