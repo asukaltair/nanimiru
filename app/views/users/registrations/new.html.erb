@@ -1,34 +1,64 @@
-<h2>Sign up</h2>
+<div class="container">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  <div class="form-signup">
+
+    <h2 class="signup-name">Sign up</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="field-signup">
+        <table style="width: 100%;">
+          <tr>
+            <td class="field-signup-title"><%= f.label :name %></td>
+            <td class="field-signup-content"><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+          </tr>
+          <tr>
+            <td class="field-signup-title"><%= f.label :email %></td>
+            <td class="field-signup-content"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+          </tr>
+          <tr>
+            <td class="field-signup-title"><%= f.label :password, "Password <br/> <em>( #{@minimum_password_length} characters minimum)</em>".html_safe %></td>
+            <td class="field-signup-content"><%= f.password_field :password, autocomplete: "new-password" %></td>
+          </tr>
+          <tr>
+            <td class="field-signup-title"><%= f.label :password_confirmation, "Password <br/> confirmation".html_safe %></td>
+            <td class="field-signup-content"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="field-signup">
+        <div class="row">
+          <div class="col-md-4">
+            <%= attachment_image_tag(@user, :image, size: "500x500" ) %>
+          </div>
+          <div class="col-md-4">
+            <div class="field-signup-image">
+              <%= f.attachment_field :image %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="actions">
+              <div class="actions-signup">
+                <%= f.submit "Register", class: "btn actions-signup-register" %>
+              </div>
+              <div class="actions-signup">
+                <%= link_to "Back", root_path, class: "btn actions-signup-back" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+
+    <div class="links-signup">
+      <%= render "users/shared/links" %>
+    </div>
+
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

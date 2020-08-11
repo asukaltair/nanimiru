@@ -12,11 +12,14 @@
   <%= render 'layouts/navbar' %>
 
   <body>
-    <%= yield %>
-  </body>
+    <div class="background">
 
-  <footer>
-    Have fun ! <%= link_to '©︎', new_admin_session_path %> 2020 Nanimiru
-  </footer>
+      <%= yield %>
+
+      <footer>
+        Have fun ! <%= link_to '©︎', new_admin_session_path %> 2020 Nanimiru
+      </footer>
+    </div>
+  </body>
 
 </html>
