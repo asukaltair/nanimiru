@@ -45,6 +45,8 @@ Rails.application.routes.draw do
 		post 'follow/:name' => 'relationships#create', as: 'follow'
 		delete 'unfollow/:name' => 'relationships#destroy', as: 'unfollow'
 
+		get 'search' => 'photos#search', as: 'search'
+
 	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

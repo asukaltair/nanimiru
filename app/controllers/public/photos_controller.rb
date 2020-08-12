@@ -40,6 +40,17 @@ class Public::PhotosController < ApplicationController
 		redirect_to root_path
 	end
 
+	def search
+		@photos = Photo.all
+		if params[:search]
+			@users = User.where('name LIKE ?', "%#{params[:search]}%")
+			@search_photos = Photo.where('text LIKE ?', "%#{params[:search]}%")
+		else
+			@users = User.all
+			@search_photos = Photo.all
+		end
+	end
+
 	private
 
 	def ensure_photo
