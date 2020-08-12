@@ -43,16 +43,20 @@ footer {
 
 }
 
-.link-login {
+.link-login,
+.link-signup,
+.link-forget-password {
 	background-color: #ffffff85;
 }
 
-.signup-name {
+.signup-name,
+.login-name {
 	padding: 20px 0px 0px 50px;
 	color: #fff;
 }
 
-.form-signup {
+.form-signup,
+.form-login {
 	margin: 0 auto;
 	padding: 20px 0;
 	width: 70%;
@@ -70,21 +74,23 @@ footer {
 	margin: 10px;
 }
 
-.field-signup-title {
+.field-signup-title,
+.field-login-title {
 	height: 70px;
 	width: 35%;
 	text-align: right;
 }
 
-.field-signup-content {
-	text-align: center;
+.field-signup-content,
+.field-login-content {
+    padding-left: 50px;
 	width: 65%;
 
 	input[type="text"],
 	input[type="email"],
 	input[type="password"] {
 		height: 40px;
-		width: 80%;
+		width: 75%;
 		background: rgba(223, 222, 222, 0.81);
 		border: 1px solid #000000;
 		box-sizing: border-box;
@@ -96,23 +102,38 @@ footer {
     margin: 5px 0;
 }
 
-.actions-signup-register {
-	width: 150px;
-	background: #C3F4F8;
+.actions-signup-register,
+.actions-login-login,
+.actions-signup-back,
+.actions-login-back {
 	border: 2px solid #000000;
 	box-sizing: border-box;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.actions-signup-register,
+.actions-login-login {
+	background: #C3F4F8;
+}
+
+.actions-signup-back,
+.actions-login-back {
+	background: #F2D8D8;;
+}
+
+.actions-signup-register,
 .actions-signup-back {
 	width: 150px;
-	background: #F2D8D8;;
-	border: 2px solid #000000;
-	box-sizing: border-box;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.links-signup {
+.actions-login-login,
+.actions-login-back {
+	width: 180px;
+}
+
+
+.links-signup,
+.links-login {
 	margin: 30px 50px 20px;
     text-align: center;
 }
