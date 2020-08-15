@@ -8,6 +8,7 @@
 <div class="container">
 	<div class="row">
 		<% if params[:search].blank? %>
+
 			<% @photos.each do |photo| %>
 				<div class="col-md-3">
 					<%= link_to photo_path(photo.id) do %>
@@ -15,14 +16,17 @@
 					<% end %>
 				</div>
 			<% end %>
+
 		<% else %>
+
 			<% @users.each do |user| %>
 				<%= user.name %>
 			<% end %>
 
-			<% @search_photos.each do |photo| %>
-				<%= photo.text %>
+			<% @photo_tags.each do |tag| %>
+				<%= tag.tag_list %>
 			<% end %>
+
 		<% end %>
 	</div>
 </div>

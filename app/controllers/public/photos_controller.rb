@@ -42,13 +42,8 @@ class Public::PhotosController < ApplicationController
 
 	def search
 		@photos = Photo.all
-		if params[:search]
-			@users = User.where('name LIKE ?', "%#{params[:search]}%")
-			@search_photos = Photo.where('text LIKE ?', "%#{params[:search]}%")
-		else
-			@users = User.all
-			@search_photos = Photo.all
-		end
+		@users = User.where('name LIKE ?', "%#{params[:search]}%")
+		@photo_tags = Photo.tagged_with(params[:search], :wild => true, :any => true)
 	end
 
 	private
