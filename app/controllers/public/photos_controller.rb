@@ -60,7 +60,8 @@ class Public::PhotosController < ApplicationController
 	def photo_params
 		params.require(:photo).permit(
 			:image,
-			:text)
+			:text,
+			:tag_list)
 	end
 
 end

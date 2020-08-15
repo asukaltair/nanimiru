@@ -1,6 +1,7 @@
 class Photo < ApplicationRecord
 
 	attachment :image
+	acts_as_taggable
 
 	belongs_to :user
 
