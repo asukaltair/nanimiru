@@ -4,6 +4,7 @@ class Public::UsersController < ApplicationController
 	before_action :ensure_user, only: [:show, :edit, :update]
 
 	def show
+		@photos = @user.photos
 	end
 
 	def edit
