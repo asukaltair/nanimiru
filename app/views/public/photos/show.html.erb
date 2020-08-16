@@ -30,6 +30,20 @@
 			<% @comments.each do |comment| %>
 				<%= comment.comment %>
 
+			<div id="star-rate-<%= comment.id %>"></div>
+			<script>
+				$('#star-rate-<%= comment.id %>').raty({
+					size: 36,
+					starOff:  '<%= asset_path('star-off.png') %>',
+					starOn : '<%= asset_path('star-on.png') %>',
+					starHalf: '<%= asset_path('star-half.png') %>',
+					half: true,
+					readOnly: true,
+					score: <%= comment.star %>,
+				});
+			</script>
+
+
 				<% if comment.user_id == current_user.id %>
 					<%= link_to 'Edit', edit_photo_comment_path(comment.photo, comment) %>
 					<%= link_to 'Destroy', photo_comment_path(comment.photo, comment), method: :delete, data: {confirm: "Are you sure?"} %>
@@ -39,6 +53,9 @@
 			<%= form_with model: [@photo, @comment], local: true do |f| %>
 				<%= f.label :comment %>
 				<%= f.text_area :comment %>
+				<div id="star">
+					<%= f.hidden_field :star, id: :review_star %>
+				</div>
 
 				<%= f.submit 'Post' %>
 			<% end %>
@@ -46,3 +63,14 @@
 
 	</div>
 </div>
+
+<script>
+	$('#star').raty({
+		size     : 36,
+		starOff:  '<%= asset_path('star-off.png') %>',
+		starOn : '<%= asset_path('star-on.png') %>',
+		starHalf: '<%= asset_path('star-half.png') %>',
+		scoreName: 'comment[star]',
+		half: true,
+	});
+</script>
