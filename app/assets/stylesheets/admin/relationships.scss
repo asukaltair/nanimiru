@@ -1,3 +1,50 @@
 // Place all the styles related to the admin/relationships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin_relationship-follower,
+.admin_relationship-following {
+	margin: 0 auto;
+	padding: 20px 0;
+	width: 85%;
+	background-color: #00000040;
+	border-radius: 10px;
+	font-size: 20px;
+
+	.admin_relationship-follower-name,
+	.admin_relationship-following-name {
+		padding: 20px 0 0 50px;
+		color: #fff;
+	}
+
+	.admin_follow-table {
+		width: 90%;
+		margin: 0 auto;
+
+		td {
+			padding: 10px 0;
+		}
+
+		.admin_follow-table-image {
+			width: 20%;
+			text-align: center;
+
+			.admin_follow-table-image-content {
+				width: 50%;
+				border-radius: 50px;
+			}
+		}
+		.admin_follow-table-name,
+		.admin_follow-table-photo {
+			width: 22%;
+		}
+		.admin_follow-table-photo,
+		.admin_follow-table-following,
+		.admin_follow-table-follower,
+		.admin_follow-table-following:hover,
+		.admin_follow-table-follower:hover {
+			color: #585858;
+			text-decoration: none;
+		}
+	}
+}
