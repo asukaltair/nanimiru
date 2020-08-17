@@ -1,23 +1,39 @@
 <div class="container">
-	<table>
-		<% @users.each do |user| %>
-			<tr>
-				<td>
-					<%= link_to admin_user_path(user) do %>
-						<%= attachment_image_tag user, :image, size:'50x50', format: 'jpeg', fallback: 'no-user-image.png' %>
-					<% end %>
-				</td>
-				<td><%= user.name %></td>
-				<td><%= 'how many posts' %></td>
-				<td>
-					<%= link_to admin_user_followings_path(user) do %>
-						<%= user.follower.count %> followings
-					<% end %>
-					<%= link_to admin_user_followers_path(user) do %>
-						<%= user.followed.count %> followers
-					<% end %>
-				</td>
-			</tr>
-		<% end %>
-</table>
+
+	<div class="users">
+		<h2 class="users-name">Users</h2>
+
+		<table class="users-table">
+			<% @users.each do |user| %>
+				<tr>
+					<td class="users-table-image">
+						<%= link_to admin_user_path(user) do %>
+							<%= attachment_image_tag user, :image, class: "users-table-image-content", format: 'jpeg', fallback: 'no-user-image.png' %>
+						<% end %>
+					</td>
+					<td class="users-table-name"><%= user.name %></td>
+					<td class="users-table-photo"><%= pluralize(user.photos.count, "photo") %></td>
+					<td class="users-table-follow">
+						<%= link_to admin_user_followings_path(user), class: "table-following" do %>
+							<%= pluralize(user.follower.count, "following") %>
+						<% end %>
+					</td>
+					<td class="users-table-follow">
+						<%= link_to admin_user_followers_path(user), class: "table-follower" do %>
+							<%= pluralize(user.followed.count, "follower") %>
+						<% end %>
+					</td>
+					<td class="users-table-btn">
+						<% if user.is_active == true %>
+							<%= link_to 'Hide', admin_user_update_path(user), method: :put, class: "btn users-table-btn-hide" %>
+						<% else %>
+							<%= link_to 'Open', admin_user_update_path(user), method: :put, class: "btn users-table-btn-open" %>
+						<% end %>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+
+	</div>
+
 </div>

@@ -13,10 +13,10 @@ class Admin::UsersController < ApplicationController
 	def update
 		if @user.is_active == true
 			@user.update(is_active: false)
-			redirect_to admin_user_path
+			redirect_back(fallback_location: root_path)
 		else
 			@user.update(is_active: true)
-			redirect_to admin_user_path
+			redirect_back(fallback_location: root_path)
 		end
 	end
 

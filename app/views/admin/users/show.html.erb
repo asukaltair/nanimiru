@@ -4,10 +4,10 @@
 			<%= attachment_image_tag @user, :image, size:'50x50', format: 'jpeg', fallback: 'no-user-image.png' %>
 			<%= @user.name %>
 			<%= @user.introduction %>
-			<%= link_to user_followings_path do %>
+			<%= link_to user_followings_path(@user) do %>
 				<%= @user.follower.count %> followings
 			<% end %>
-			<%= link_to user_followers_path do %>
+			<%= link_to user_followers_path(@user) do %>
 				<%= @user.followed.count %> followers
 			<% end %>
 			<% if @user.is_active == true %>
