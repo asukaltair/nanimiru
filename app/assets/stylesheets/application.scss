@@ -51,7 +51,7 @@ footer {
 
 .signup-name,
 .login-name {
-	padding: 20px 0px 0px 50px;
+	padding: 20px 0 0 50px;
 	color: #fff;
 }
 
@@ -65,22 +65,12 @@ footer {
 	font-size: 20px;
 }
 
-
-.field-signup-table {
-	width: 100%;
-}
-
-.field-signup-row {
-	margin: 10px;
-}
-
 .field-signup-title,
 .field-login-title {
 	height: 70px;
 	width: 35%;
 	text-align: right;
 }
-
 .field-signup-content,
 .field-login-content {
     padding-left: 50px;
@@ -110,27 +100,22 @@ footer {
 	box-sizing: border-box;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
 .actions-signup-register,
 .actions-login-login {
 	background: #C3F4F8;
 }
-
 .actions-signup-back,
 .actions-login-back {
 	background: #F2D8D8;
 }
-
 .actions-signup-register,
 .actions-signup-back {
 	width: 150px;
 }
-
 .actions-login-login,
 .actions-login-back {
 	width: 180px;
 }
-
 
 .links-signup,
 .links-login {
