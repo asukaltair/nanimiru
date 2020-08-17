@@ -10,17 +10,17 @@
 	background-color: #00000040;
 	border-radius: 10px;
 	font-size: 20px;
-}
 
-.relationship-follower-name,
-.relationship-following-name {
-	padding: 20px 0 0 50px;
-	color: #fff;
-}
+	.relationship-follower-name,
+	.relationship-following-name {
+		padding: 20px 0 0 50px;
+		color: #fff;
+	}
 
-.relationship-content,
-.relationship-content:hover {
-	font-size: 25px;
-	color: #000;
-	text-decoration: none;
+	.relationship-content,
+	.relationship-content:hover {
+		font-size: 25px;
+		color: #000;
+		text-decoration: none;
+	}
 }
