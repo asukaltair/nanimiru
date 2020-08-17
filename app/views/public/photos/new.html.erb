@@ -1,16 +1,38 @@
 <div class="container">
-	<div class="row">
+
+	<div class="form-photo-new">
+
+		<h2 class="photo-new-name">New Post</h2>
+
 		<%= form_with model: @photo, local: true do |f| %>
 
-			<%= attachment_image_tag @photo, :image, size:'50x50', format: 'jpeg' %>
-			<%= f.attachment_field :image %>
+			<div class="field-photo-new">
+				<div class="row">
 
-			<%= f.text_area :text %>
+					<div class="col-md-5">
+						<div class="field-photo-new-image">
+							<%= attachment_image_tag @photo, :image, format: 'jpeg' %>
+							<%= f.attachment_field :image %>
+						</div>
+					</div>
 
-			<%= f.text_field :tag_list, value: @photo.tag_list.join(',') %>
+					<div class="col-md-7">
+						<div class="field-photo-new-text">
+							<%= f.text_area :text, rows: "5", placeholder: "テキストの入力…" %>
+						</div>
+						<div class="field-photo-new-tag">
+							<%= f.text_field :tag_list, placeholder: "タグ　例) 海, 山, 夜景", value: @photo.tag_list.join(',') %>
+						</div>
+						<div class="actions-photo-new">
+							<%= f.submit 'Post', class: "btn actions-photo-new-post" %>
+						</div>
+					</div>
 
-			<%= f.submit 'Post' %>
+				</div>
+			</div>
 
 		<% end %>
+
 	</div>
+
 </div>
