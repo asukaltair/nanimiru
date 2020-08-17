@@ -1,0 +1,9 @@
+<div class="row mx-0">
+	<div class="col-md-3 p-4" style="text-align: center;">
+		<%= link_to user_path(user.name), class: "relationship-content" do %>
+			<%= attachment_image_tag user, :image, style: "width: 100%;", format: 'jpeg', fallback: 'no-user-image.png' %>
+			<br>
+			<%= user.name %>
+		<% end %>
+	</div>
+</div>

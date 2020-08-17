@@ -1,19 +1,9 @@
 <div class="container">
 
 	<div class="relationship-following">
-	<h2 class="relationship-following-name"><%= @user.name %>'s followings</h2>
+		<h2 class="relationship-following-name"><%= @user.name %>'s followings</h2>
 
-	<div class="row mx-0">
-		<% @users.each do |user| %>
-			<div class="col-md-3 p-4" style="text-align: center;">
-				<%= link_to user_path(user.name), class: "relationship-content" do %>
-					<%= attachment_image_tag user, :image, style: "width: 100%;", format: 'jpeg', fallback: 'no-user-image.png' %>
-					<br>
-					<%= user.name %>
-				<% end %>
-			</div>
-		<% end %>
-	</div>
+		<%= render partial: "list", collection: @users, as: :user %>
 
 	</div>
 </div>
