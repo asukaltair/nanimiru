@@ -1,26 +1,55 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-4">
-			<%= attachment_image_tag @user, :image, size:'50x50', format: 'jpeg', fallback: 'no-user-image.png' %>
-			<%= @user.name %>
-			<%= @user.introduction %>
-			<%= link_to user_followings_path(@user) do %>
-				<%= @user.follower.count %> followings
-			<% end %>
-			<%= link_to user_followers_path(@user) do %>
-				<%= @user.followed.count %> followers
-			<% end %>
-			<% if @user.is_active == true %>
-				<!-- putは置換、patchは更新・変更・修正 -->
-				<%= link_to 'Hide', admin_user_update_path, method: :put, class: "btn btn-success" %>
-			<% else %>
-				<%= link_to 'Open', admin_user_update_path, method: :put, class: "btn btn-success" %>
-			<% end %>
-		</div>
-		<div class="col-md-8">
-			<div class="row">
 
+		<div class="col-md-3">
+			<div class="user-show-user">
+				<div class="user-show-user-image">
+					<%= attachment_image_tag @user, :image, class: "user-image-content", format: 'jpeg', fallback: 'no-user-image.png' %>
+				</div>
+				<div class="user-show-user-name">
+					<%= @user.name %>
+				</div>
+				<div class="user-show-user-introduction">
+					<%= @user.introduction %>
+				</div>
+				<div class="user-show-user-follow">
+					<div class="row">
+						<div class="col-md-4 offset-md-2 px-0">
+							<%= link_to user_followings_path(@user), class: "user-follow-content" do %>
+								<%= @user.follower.count %> <br>
+								followings
+							<% end %>
+						</div>
+						<div class="col-md-4 px-0">
+							<%= link_to user_followers_path(@user), class: "user-follow-content" do %>
+								<%= @user.followed.count %> <br>
+								followers
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="user-show-user-btn">
+					<% if @user.is_active == true %>
+						<!-- putは置換、patchは更新・変更・修正 -->
+						<%= link_to 'Hide', admin_user_update_path, method: :put, class: "btn user-btn-hide" %>
+					<% else %>
+						<%= link_to 'Open', admin_user_update_path, method: :put, class: "btn user-btn-open" %>
+					<% end %>
+				</div>
 			</div>
 		</div>
+
+		<div class="col-md-9">
+			<div class="user-show-photo">
+				<div class="row">
+					<% @photos.each do |photo| %>
+						<div class="col-md-3 px-0">
+							<%= attachment_image_tag photo, :image, class: "user-photo-content", format: 'jpeg' %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </div>
