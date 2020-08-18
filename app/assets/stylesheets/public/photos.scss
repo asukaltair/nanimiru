@@ -15,8 +15,10 @@
 
 
 /* photos/new */
+/* photos/edit */
 
-.form-photo-new {
+.form-photo-new,
+.form-photo-edit {
 	margin: 0 auto;
 	padding: 20px;
 	width: 70%;
@@ -24,14 +26,22 @@
 	border-radius: 10px;
 	font-size: 20px;
 
-	.photo-new-name {
+	.photo-new-name,
+	.photo-edit-name {
 		padding: 20px 0 0 30px;
 		color: #fff;
 	}
 
+	.field-photo-edit-image-content {
+		width: 100%;
+	}
+
 	.field-photo-new-text,
 	.field-photo-new-tag,
-	.actions-photo-new {
+	.actions-photo-new,
+	.field-photo-edit-text,
+	.field-photo-edit-tag,
+	.actions-photo-edit, {
 		padding-left: 30px;
 		margin: 20px 0;
 	}
@@ -48,16 +58,23 @@
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
 
-	.actions-photo-new {
+	.actions-photo-new,
+	.actions-photo-edit {
 		width: 80%;
 		text-align: right;
 
-		.actions-photo-new-post {
+		.actions-photo-new-post,
+		.actions-photo-edit-update {
 			width: 130px;
-			background: #C3F4F8;
 			border: 2px solid #000000;
 			box-sizing: border-box;
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		}
+		.actions-photo-new-post {
+			background: #C3F4F8;
+		}
+		.actions-photo-edit-update {
+			background: #AEDD7E;
 		}
 	}
 }
