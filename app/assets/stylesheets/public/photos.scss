@@ -13,18 +13,19 @@
 	}
 }
 
+
 /* photos/new */
 
 .form-photo-new {
 	margin: 0 auto;
-	padding: 20px 0;
+	padding: 20px;
 	width: 70%;
 	background-color: #00000040;
 	border-radius: 10px;
 	font-size: 20px;
 
 	.photo-new-name {
-		padding: 20px 0 0 50px;
+		padding: 20px 0 0 30px;
 		color: #fff;
 	}
 
@@ -59,7 +60,102 @@
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		}
 	}
+}
 
 
+/* photos/show */
+
+.photo-show {
+	margin: 0 auto;
+	padding: 30px;
+	width: 80%;
+	background-color: #00000040;
+	border-radius: 10px;
+	font-size: 20px;
+
+	.photo-show-image-content {
+		width: 100%;
+	}
+
+	.field-photo-show {
+		width: 90%;
+		margin: 5px auto;
+	}
+	.actions-photo-show-edit,
+	.actions-photo-show-destroy {
+		width: 48%;
+		padding: 5px 0;
+		box-sizing: border-box;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+	.actions-photo-show-edit {
+		background: #AEDD7E;
+	}
+	.actions-photo-show-destroy {
+		background: #F2D8D8;
+	}
+
+	.photo-show-tag-content {
+		font-size: 15px;
+		background: #ff9522;
+		color: #fff;
+		padding: 5px 12px;
+		border-radius: 0.25rem;
+		box-sizing: border-box;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+
+	.photo-show-post-comment {
+		margin-top: 15px;
+
+		textarea {
+			width: 100%;
+			display: block;
+			background: rgba(223, 222, 222, 0.81);
+			border: 1px solid #000000;
+			box-sizing: border-box;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		}
+		#star {
+			text-align: right;
+		}
+
+		.actions-post-comment {
+			text-align: right;
+
+			.actions-post-comment-post {
+				background: #C3F4F8;
+				padding: 5px 20px;
+				box-sizing: border-box;
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			}
+		}
+	}
+
+	.photo-show-comment {
+		margin-bottom: 10px;
+		padding: 10px;
+		background-color: #fff;
+		border: 1px solid #000;
+		border-radius: 5px;
+	}
+
+	.photo-show-comment-btn {
+		text-align: right;
+
+		.photo-comment-btn-edit,
+		.photo-comment-btn-destroy {
+			width: 25%;
+			padding: 5px 0;
+			box-sizing: border-box;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		}
+		.photo-comment-btn-edit {
+			background: #AEDD7E;
+		}
+		.photo-comment-btn-destroy {
+			background: #F2D8D8;
+		}
+	}
 }
 

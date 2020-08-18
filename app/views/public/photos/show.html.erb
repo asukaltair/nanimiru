@@ -1,67 +1,103 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-5">
-			<%= attachment_image_tag @photo, :image, size:'300x300', format: 'jpeg' %>
 
-			<%= @photo.text %>
+	<div class="photo-show">
+		<div class="row">
 
-			<% @photo.tag_list.each do |tag| %>
-				<%= tag %>
-			<% end %>
-
-			<% if @photo.favorited_by?(current_user) %>
-				<%= link_to photo_favorite_path(@photo), method: :delete do %>
-					<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-					<%= @photo.favorites.count %> いいね
-				<% end %>
-			<% else %>
-				<%= link_to photo_favorites_path(@photo), method: :post do %>
-					<i class="fa fa-heart-o" aria-hidden="true"></i>
-					<%= @photo.favorites.count %> いいね
-				<% end %>
-			<% end %>
-
-			<% if @photo.user_id == current_user.id %>
-				<%= link_to 'Edit', edit_photo_path %>
-				<%= link_to 'Destroy', photo_path, method: :delete, data: {confirm: "Are you sure?"} %>
-			<% end %>
-		</div>
-		<div class="col-md-7">
-			<% @comments.each do |comment| %>
-				<%= comment.comment %>
-
-			<div id="star-rate-<%= comment.id %>"></div>
-			<script>
-				$('#star-rate-<%= comment.id %>').raty({
-					size: 36,
-					starOff:  '<%= asset_path('star-off.png') %>',
-					starOn : '<%= asset_path('star-on.png') %>',
-					starHalf: '<%= asset_path('star-half.png') %>',
-					half: true,
-					readOnly: true,
-					score: <%= comment.star %>,
-				});
-			</script>
-
-
-				<% if comment.user_id == current_user.id %>
-					<%= link_to 'Edit', edit_photo_comment_path(comment.photo, comment) %>
-					<%= link_to 'Destroy', photo_comment_path(comment.photo, comment), method: :delete, data: {confirm: "Are you sure?"} %>
-				<% end %>
-			<% end %>
-
-			<%= form_with model: [@photo, @comment], local: true do |f| %>
-				<%= f.label :comment %>
-				<%= f.text_area :comment %>
-				<div id="star">
-					<%= f.hidden_field :star, id: :review_star %>
+			<div class="col-md-5">
+				<div class="photo-show-image">
+					<%= attachment_image_tag @photo, :image, class: "photo-show-image-content", format: 'jpeg' %>
 				</div>
 
-				<%= f.submit 'Post' %>
-			<% end %>
-		</div>
+				<div class="field-photo-show">
+					<div class="row">
+						<div class="photo-show-favorite col-md-4">
+							<% if @photo.favorited_by?(current_user) %>
+								<%= link_to photo_favorite_path(@photo), method: :delete do %>
+									<i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+									<%= @photo.favorites.count %>
+								<% end %>
+							<% else %>
+								<%= link_to photo_favorites_path(@photo), method: :post do %>
+									<i class="far fa-heart" aria-hidden="true"></i>
+									<%= @photo.favorites.count %>
+								<% end %>
+							<% end %>
+						</div>
 
+						<% if @photo.user_id == current_user.id %>
+							<div class="actions-photo-show col-md-8 px-0">
+								<%= link_to 'Edit', edit_photo_path, class: "btn actions-photo-show-edit" %>
+								<%= link_to 'Destroy', photo_path, class: "btn actions-photo-show-destroy", method: :delete, data: {confirm: "Are you sure?"} %>
+							</div>
+						<% end %>
+					</div>
+				</div>
+
+				<div class="field-photo-show">
+					<div class="photo-show-text">
+						<%= @photo.text %>
+					</div>
+				</div>
+
+				<div class="field-photo-show">
+					<div class="photo-show-tag">
+						<% @photo.tag_list.each do |tag| %>
+							<span class="photo-show-tag-content"><%= tag %></span>
+						<% end %>
+					</div>
+				</div>
+
+				<div class="field-photo-show">
+					<div class="photo-show-post-comment">
+						<%= form_with model: [@photo, @comment], local: true do |f| %>
+							<%= f.text_area :comment, rows: "3", placeholder: "コメントの入力…" %>
+							<div id="star">
+								<%= f.hidden_field :star, id: :review_star %>
+							</div>
+
+							<div class="actions-post-comment">
+								<%= f.submit 'Post', class: "btn actions-post-comment-post" %>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-7">
+
+				<% @comments.each do |comment| %>
+					<div class="photo-show-comment">
+						<div id="star-rate-<%= comment.id %>" class="photo-show-comment-star"></div>
+							<script>
+								$('#star-rate-<%= comment.id %>').raty({
+									size: 36,
+									starOff:  '<%= asset_path('star-off.png') %>',
+									starOn : '<%= asset_path('star-on.png') %>',
+									starHalf: '<%= asset_path('star-half.png') %>',
+									half: true,
+									readOnly: true,
+									score: <%= comment.star %>,
+								});
+							</script>
+
+						<div class="photo-show-comment-content">
+							<%= comment.comment %>
+						</div>
+
+						<% if comment.user_id == current_user.id %>
+							<div class="photo-show-comment-btn">
+								<%= link_to 'Edit', edit_photo_comment_path(comment.photo, comment), class: "btn photo-comment-btn-edit" %>
+								<%= link_to 'Destroy', photo_comment_path(comment.photo, comment), class: "btn photo-comment-btn-destroy", method: :delete, data: {confirm: "Are you sure?"} %>
+							</div>
+						<% end %>
+					</div>
+				<% end %>
+
+			</div>
+
+		</div>
 	</div>
+
 </div>
 
 <script>
