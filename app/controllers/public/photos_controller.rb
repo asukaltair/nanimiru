@@ -42,7 +42,9 @@ class Public::PhotosController < ApplicationController
 
 	def search
 		@photos = Photo.all
+		@word = params[:search]
 		@users = User.where('name LIKE ?', "%#{params[:search]}%")
+		# act-as-taggable-on のLIKE検索は下記の wild/anyを用いる
 		@photo_tags = Photo.tagged_with(params[:search], :wild => true, :any => true)
 	end
 

@@ -3,12 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* photos/index */
+/* photos/search */
 
-.photo-index {
+.photo-index,
+.search-results-photo {
 	width: 90%;
 	text-align: center;
 
-	.photo-index-content {
+	.photo-index-content,
+	.search-results-photo-content {
 		width: 100%;
 	}
 }
@@ -172,6 +175,67 @@
 		}
 		.photo-comment-btn-destroy {
 			background: #F2D8D8;
+		}
+	}
+}
+
+
+/* photos/search */
+
+.form-search {
+	width: 90%;
+
+	input[type="text"] {
+		height: 35px;
+	}
+
+	.actions-field-search-search {
+		padding: 5px 10px;
+		border: 2px solid #000000;
+		box-sizing: border-box;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		background: #C3F4F8;
+	}
+}
+
+.search-results {
+	margin: 0 auto;
+	padding: 20px 0;
+	background-color: #00000040;
+	border-radius: 10px;
+	font-size: 20px;
+
+	.search-results-word {
+		padding: 20px 0 0 50px;
+		color: #fff;
+	}
+
+	.search-results-user,
+	.search-results-tag {
+		width: 90%;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		background-color: #00000040;
+		border-radius: 10px;
+		font-size: 20px;
+
+		.search-results-user-name,
+		.search-results-tag-name {
+			padding: 20px 0 0 30px;
+			color: #e5cdff;
+		}
+
+		.search-results-user-content,
+		.search-results-tag-content,
+		.search-results-user-content:hover,
+		.search-results-tag-content:hover {
+			width: 100%;
+			color: black;
+			text-decoration: none;
+		}
+		.search-results-user-image {
+			width: 95%;
+			border-radius: 50%;
 		}
 	}
 }
