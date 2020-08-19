@@ -1,17 +1,17 @@
 class Admin::CommentsController < ApplicationController
 
 	def index
-		@comments = Comment.all
+		@comments = Comment.all.order("created_at DESC")
 	end
 
 	def update
-		@comment = Comment.find(params[:id])
-		if @comment.is_active == true
-			@comment.update(is_active: false)
-			redirect_to admin_photo_path(@comment.photo_id)
+		comment = Comment.find(params[:id])
+		if comment.is_active == true
+			comment.update(is_active: false)
+			redirect_back(fallback_location: root_path)
 		else
-			@comment.update(is_active: true)
-			redirect_to admin_photo_path(@comment.photo_id)
+			comment.update(is_active: true)
+			redirect_back(fallback_location: root_path)
 		end
 	end
 

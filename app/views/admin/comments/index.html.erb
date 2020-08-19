@@ -1,12 +1,32 @@
 <div class="container">
-	comments
 
-	<div class="row">
-		<% @comments.each do |comment| %>
-			<div class="col-md-3">
-				<%= attachment_image_tag comment.photo, :image, size:'50x50', format: 'jpeg', fallback: 'no-user-image.png' %>
-				<%= comment.comment %>
-			</div>
-		<% end %>
+	<div class="admin_comment-index">
+		<h2 class="admin_comment-index-name">Comments</h2>
+
+		<table class="admin_comment-index-table">
+
+			<% @comments.each do |comment| %>
+				<tr>
+					<td class="admin_comment-index-table-image">
+						<%= link_to admin_photo_path(comment.photo.id) do %>
+							<%= attachment_image_tag comment.photo, :image, class: "admin_comment-index-table-image-content", format: 'jpeg' %>
+						<% end %>
+					</td>
+					<td class="admin_comment-index-table-name"><%= comment.user.name %></td>
+					<td class="admin_comment-index-table-comment"><%= comment.comment %></td>
+					<td class="admin_comment-index-table-date"><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+					<td class="admin_comment-index-table-btn">
+						<% if comment.is_active == true %>
+							<%= link_to 'Hide', admin_photo_comment_path(comment.photo, comment), method: :PUT, class: "btn admin_comment-index-table-btn-hide" %>
+						<% else %>
+							<%= link_to 'Open', admin_photo_comment_path(comment.photo, comment), method: :PUT, class: "btn admin_comment-index-table-btn-open" %>
+						<% end %>
+					</td>
+				</tr>
+			<% end %>
+
+		</table>
+
 	</div>
+
 </div>
