@@ -1,0 +1,14 @@
+// Place all the styles related to the admin/photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* photos/index */
+
+.admin_photo-index {
+	width: 90%;
+	text-align: center;
+
+	.admin_photo-index-content {
+		width: 100%;
+	}
+}
