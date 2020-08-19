@@ -50,10 +50,10 @@
 				<div class="field-photo-show">
 					<div class="photo-show-post-comment">
 						<%= form_with model: [@photo, @comment], local: true do |f| %>
-							<%= f.text_area :comment, rows: "3", placeholder: "コメントの入力…" %>
 							<div id="star">
 								<%= f.hidden_field :star, id: :review_star %>
 							</div>
+							<%= f.text_area :comment, rows: "3", placeholder: "コメントの入力…" %>
 
 							<div class="actions-post-comment">
 								<%= f.submit 'Post', class: "btn actions-post-comment-post" %>
