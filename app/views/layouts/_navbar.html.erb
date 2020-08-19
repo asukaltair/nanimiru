@@ -1,67 +1,93 @@
 <nav class="navbar navbar-expand-lg">
-  <% if admin_signed_in? %>
-      <%= image_tag 'nanimiru-logo.png', size: "150x50" %>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to "写真一覧", admin_root_path %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'ユーザー一覧', admin_users_path %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to 'コメント一覧', admin_comments_path %>
-        </li>
-        <% if admin_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
-          </li>
-        <% else %>
-          <li class="nav-item active">
-            <%= link_to 'ログイン', new_admin_session_path %>
-          </li>
-        <% end %>
-      </ul>
-  <% else %>
-    <% if user_signed_in? %>
-      <%= link_to root_path do %>
+  <div class="container">
+
+    <% if admin_signed_in? %>
         <%= image_tag 'nanimiru-logo.png', size: "150x50" %>
-      <% end %>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <%= link_to 'マイページ', user_path(current_user.name) %>
-        </li>
-        <li class="nav-item">
-          <%= link_to '新規投稿', new_photo_path %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to '検索', search_path %>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">メール<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        </li>
-      </ul>
+        <ul class="navbar-nav text-right pr-4">
+          <li class="nav-item mx-2">
+            <%= link_to admin_root_path, class: "nav-link" do %>
+              <i class="far fa-images"></i>
+            <% end %>
+          </li>
+          <li class="nav-item mx-2">
+            <%= link_to admin_users_path, class: "nav-link" do %>
+              <i class="fas fa-users"></i>
+            <% end %>
+          </li>
+          <li class="nav-item mx-2">
+            <%= link_to admin_comments_path, class: "nav-link" do %>
+              <i class="far fa-comments"></i>
+            <% end %>
+          </li>
+          <li class="nav-item mx-2">
+            <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link" do %>
+              <i class="fas fa-sign-out-alt"></i>
+            <% end %>
+          </li>
+        </ul>
+
     <% else %>
-      <%= image_tag 'nanimiru-logo.png', size: "150x50" %>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to "写真一覧", root_path %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to '検索', search_path %>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">メール<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <%= link_to 'ログイン', new_user_session_path %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to '新規登録', new_user_registration_path %>
-        </li>
-      </ul>
+
+      <% if user_signed_in? %>
+        <%= link_to root_path do %>
+          <%= image_tag 'nanimiru-logo.png', size: "150x50" %>
+        <% end %>
+        <ul class="navbar-nav text-right pr-4">
+          <li class="nav-item mx-2">
+            <%= link_to user_path(current_user.name), class: "nav-link" do %>
+              <i class="fas fa-user"></i>
+            <% end %>
+          </li>
+          <li class="nav-item mx-2">
+            <%= link_to new_photo_path, class: "nav-link" do %>
+              <i class="far fa-plus-square"></i>
+            <% end %>
+          </li>
+          <li class="nav-item mx-2">
+            <%= link_to search_path, class: "nav-link" do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#"><i class="far fa-envelope"></i><span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item mx-2">
+            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+              <i class="fas fa-sign-out-alt"></i>
+            <% end %>
+          </li>
+        </ul>
+
+      <% else %>
+        <%= image_tag 'nanimiru-logo.png', size: "150x50" %>
+        <ul class="navbar-nav text-right pr-4">
+          <li class="nav-item mx-2">
+            <%= link_to root_path, class: "nav-link" do %>
+              <i class="far fa-images"></i>
+            <% end %>
+          </li>
+          <li class="nav-item mx-2">
+            <%= link_to search_path, class: "nav-link" do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#"><i class="far fa-envelope"></i><span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item mx-2">
+            <%= link_to new_user_session_path, class: "nav-link" do %>
+              <i class="fas fa-sign-in-alt"></i>
+            <% end %>
+          </li>
+          <li class="nav-item mx-2">
+            <%= link_to new_user_registration_path, class: "nav-link" do %>
+              <i class="fas fa-user-plus"></i>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
+
     <% end %>
-  <% end %>
+
+  </div>
 </nav>
