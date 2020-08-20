@@ -1,12 +1,14 @@
 class Public::CommentsController < ApplicationController
 
 	def create
-		photo = Photo.find(params[:photo_id])
-		comment = Comment.new(comment_params)
-		comment.user_id = current_user.id
-		comment.photo_id = photo.id
-		comment.save
-		redirect_to photo_path(photo)
+		@photo = Photo.find(params[:photo_id])
+		@comment = Comment.new(comment_params)
+		@comment.comment = params[:comment][:comment]
+		@comment.star = params[:comment][:star]
+		@comment.user_id = current_user.id
+		@comment.photo_id = @photo.id
+		@comment.save
+		@comments = @photo.comments
 	end
 
 	def edit
@@ -25,7 +27,7 @@ class Public::CommentsController < ApplicationController
 		@photo = Photo.find(params[:photo_id])
 		@comment = Comment.find_by(id: params[:id], photo_id: params[:photo_id])
 		@comment.destroy
-		redirect_to photo_path(@photo)
+		@comments = @photo.comments
 	end
 
 	private

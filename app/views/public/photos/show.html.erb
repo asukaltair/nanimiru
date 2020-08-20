@@ -11,17 +11,7 @@
 				<div class="field-photo-show">
 					<div class="row">
 						<div class="photo-show-favorite col-md-4">
-							<% if @photo.favorited_by?(current_user) %>
-								<%= link_to photo_favorite_path(@photo), method: :delete do %>
-									<i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
-									<%= @photo.favorites.count %>
-								<% end %>
-							<% else %>
-								<%= link_to photo_favorites_path(@photo), method: :post do %>
-									<i class="far fa-heart" aria-hidden="true"></i>
-									<%= @photo.favorites.count %>
-								<% end %>
-							<% end %>
+							<%= render 'favorite', photo: @photo %>
 						</div>
 
 						<% if @photo.user_id == current_user.id %>
@@ -49,7 +39,7 @@
 
 				<div class="field-photo-show">
 					<div class="photo-show-post-comment">
-						<%= form_with model: [@photo, @comment], local: true do |f| %>
+						<%= form_with model: [@photo, @comment], remote: true do |f| %>
 							<div id="star">
 								<%= f.hidden_field :star, id: :review_star %>
 							</div>
@@ -64,35 +54,9 @@
 			</div>
 
 			<div class="col-md-7">
-
-				<% @comments.each do |comment| %>
-					<div class="photo-show-comment">
-						<div id="star-rate-<%= comment.id %>" class="photo-show-comment-star"></div>
-							<script>
-								$('#star-rate-<%= comment.id %>').raty({
-									size: 36,
-									starOff:  '<%= asset_path('star-off.png') %>',
-									starOn : '<%= asset_path('star-on.png') %>',
-									starHalf: '<%= asset_path('star-half.png') %>',
-									half: true,
-									readOnly: true,
-									score: <%= comment.star %>,
-								});
-							</script>
-
-						<div class="photo-show-comment-content">
-							<%= comment.comment %>
-						</div>
-
-						<% if comment.user_id == current_user.id %>
-							<div class="photo-show-comment-btn">
-								<%= link_to 'Edit', edit_photo_comment_path(comment.photo, comment), class: "btn photo-comment-btn-edit" %>
-								<%= link_to 'Destroy', photo_comment_path(comment.photo, comment), class: "btn photo-comment-btn-destroy", method: :delete, data: {confirm: "Are you sure?"} %>
-							</div>
-						<% end %>
-					</div>
-				<% end %>
-
+				<div class="photo-show-comment">
+					<%= render 'comment', comments: @comments %>
+				</div>
 			</div>
 
 		</div>

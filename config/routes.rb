@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 		root 'photos#index'
 		resources :photos, only: [:new, :create, :show, :edit, :update, :destroy] do
 			resources :comments, only: [:create, :edit, :update, :destroy]
-			resources :favorites, only: [:create, :destroy]
+			resource :favorites, only: [:create, :destroy]
 		end
 
 		get 'users/:name' => 'users#show', as: 'user'
