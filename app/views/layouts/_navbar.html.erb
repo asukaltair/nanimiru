@@ -49,7 +49,9 @@
             <% end %>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#"><i class="far fa-envelope"></i><span class="sr-only">(current)</span></a>
+            <%= link_to contact_path, class: "nav-link" do %>
+              <i class="far fa-envelope"></i>
+            <% end %>
           </li>
           <li class="nav-item mx-2">
             <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
@@ -72,7 +74,9 @@
             <% end %>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#"><i class="far fa-envelope"></i><span class="sr-only">(current)</span></a>
+            <%= link_to contact_path, class: "nav-link" do %>
+              <i class="far fa-envelope"></i>
+            <% end %>
           </li>
           <li class="nav-item mx-2">
             <%= link_to new_user_session_path, class: "nav-link" do %>

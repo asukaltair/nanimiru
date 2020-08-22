@@ -11,11 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 
-//= require jquery
+
+
+
+// raty.js
 
 /*!
  * jQuery Raty - A Star Rating Plugin

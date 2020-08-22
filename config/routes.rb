@@ -47,6 +47,9 @@ Rails.application.routes.draw do
 
 		get 'search' => 'photos#search', as: 'search'
 
+		resources :inquiries, only: [:create]
+		get 'contact' => 'inquiries#new', as: 'contact'
+		get 'contact/finish' => 'inquiries#finish', as: 'contact_finish'
 	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
