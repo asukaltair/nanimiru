@@ -31,15 +31,16 @@
 
       <div class="field-signup">
         <div class="row">
-          <div class="col-md-4">
-            <%= attachment_image_tag(@user, :image, size: "500x500" ) %>
+          <div class="col-md-3 offset-md-1">
+            <%= attachment_image_tag @user, :image, class: "field-signup-image-show", format: 'jpeg', fallback: 'no-user-image.png' %>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="field-signup-image">
-              <%= f.attachment_field :image %>
+              <%= f.label :image, class: "btn field-signup-image-btn" %>
+              <%= f.attachment_field :image, class: "field-signup-image-hide" %>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 offset-md-1">
             <div class="actions">
               <div class="actions-signup">
                 <%= f.submit "Register", class: "btn actions-signup-register" %>

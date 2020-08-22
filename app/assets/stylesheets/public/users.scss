@@ -110,23 +110,49 @@
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		}
 	}
+
+	.field-user-edit-image-show {
+		width: 100%;
+	}
+
+	.field-user-edit-image {
+		text-align: center;
+
+		.field-user-edit-image-btn {
+			width: 50%;
+			padding: 5px 0;
+			margin-top: 95px;
+			border: 2px solid #000000;
+			box-sizing: border-box;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			background: #ddd27e;
+		}
+		.field-user-edit-image-hide {
+			display: none;
+		}
+	}
+
+	.actions {
+		padding-top: 27px;
+
+		.actions-user-edit {
+		    margin: 15px 0;
+
+		    .actions-user-edit-update,
+			.actions-user-edit-back {
+				width: 150px;
+				border: 2px solid #000000;
+				box-sizing: border-box;
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			}
+			.actions-user-edit-update {
+				background: #AEDD7E;
+			}
+			.actions-user-edit-back {
+				background: #F2D8D8;
+			}
+		}
+	}
 }
 
-.actions-user-edit {
-	margin: 5px 0;
-
-	.actions-user-edit-update,
-	.actions-user-edit-back {
-		width: 150px;
-		border: 2px solid #000000 !important;
-		box-sizing: border-box;
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	}
-	.actions-user-edit-update {
-		background: #AEDD7E !important;
-	}
-	.actions-user-edit-back {
-		background: #F2D8D8 !important;
-	}
-}
 

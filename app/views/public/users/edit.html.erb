@@ -6,47 +6,48 @@
 
 		<%= form_with model: @user, url: user_path, local: true do |f| %>
 
-		<div class="field-user-edit">
-			<table style="width: 100%;">
-				<tr>
-					<td class="field-user-edit-title"><%= f.label :name %></td>
-					<td class="field-user-edit-content"><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
-				</tr>
-				<tr>
-					<td class="field-user-edit-title"><%= f.label :introduction %></td>
-					<td class="field-user-edit-content"><%= f.text_area :introduction, rows: 3, autofocus: true, autocomplete: "introduction" %></td>
-				</tr>
-				<tr>
-					<td class="field-user-edit-title"><%= f.label :email %></td>
-					<td class="field-user-edit-content"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
-				</tr>
-			</table>
-		</div>
+			<div class="field-user-edit">
+				<table style="width: 100%;">
+					<tr>
+						<td class="field-user-edit-title"><%= f.label :name %></td>
+						<td class="field-user-edit-content"><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+					</tr>
+					<tr>
+						<td class="field-user-edit-title"><%= f.label :introduction %></td>
+						<td class="field-user-edit-content"><%= f.text_area :introduction, rows: 3, autofocus: true, autocomplete: "introduction" %></td>
+					</tr>
+					<tr>
+						<td class="field-user-edit-title"><%= f.label :email %></td>
+						<td class="field-user-edit-content"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+					</tr>
+				</table>
+			</div>
 
-		<div class="field-user-edit mt-3">
-			<div class="row">
-				<div class="col-md-4" style="text-align: center;">
-					<%= attachment_image_tag @user, :image, size:'100x100', format: 'jpeg', fallback: 'no-user-image.png' %>
-				</div>
-				<div class="col-md-4">
-					<div class="field-user-edit-image">
-						<%= f.attachment_field :image %>
+			<div class="field-user-edit mt-3">
+				<div class="row">
+					<div class="col-md-3 offset-md-1">
+						<%= attachment_image_tag @user, :image, class: "field-user-edit-image-show", format: 'jpeg', fallback: 'no-user-image.png' %>
 					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="actions">
-						<div class="actions-user-edit">
-							<%= f.submit 'Update', class: "btn actions-user-edit-update" %>
+					<div class="col-md-3">
+						<div class="field-user-edit-image">
+							<%= f.label :image, class: "btn field-user-edit-image-btn" %>
+							<%= f.attachment_field :image, class: "field-user-edit-image-hide" %>
 						</div>
-						<div class="actions-user-edit">
-							<%= link_to "Back", user_path(@user.name), class: "btn actions-user-edit-back" %>
+					</div>
+					<div class="col-md-4 offset-md-1">
+						<div class="actions">
+							<div class="actions-user-edit">
+								<%= f.submit 'Update', class: "btn actions-user-edit-update" %>
+							</div>
+							<div class="actions-user-edit">
+								<%= link_to "Back", user_path(@user.name), class: "btn actions-user-edit-back" %>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-	<% end %>
+		<% end %>
 
 	</div>
 </div>

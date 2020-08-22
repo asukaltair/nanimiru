@@ -103,38 +103,68 @@ footer {
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		}
 	}
+
+	.field-signup-image-show {
+		width: 100%;
+	}
+
+	.field-signup-image {
+		text-align: center;
+
+    	.field-signup-image-btn {
+			width: 50%;
+			padding: 5px 0;
+			margin-top: 95px;
+			border: 2px solid #000000;
+			box-sizing: border-box;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			background: #ddd27e;
+		}
+		.field-signup-image-hide {
+			display: none;
+		}
+	}
+
+	.actions {
+		padding-top: 27px;
+
+		.actions-signup,
+		.actions-login {
+		    margin: 15px 0;
+
+			.actions-signup-register,
+			.actions-login-login,
+			.actions-signup-back,
+			.actions-login-back {
+				border: 2px solid #000000;
+				box-sizing: border-box;
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			}
+			.actions-signup-register,
+			.actions-login-login {
+				background: #C3F4F8;
+			}
+			.actions-signup-back,
+			.actions-login-back {
+				background: #F2D8D8;
+			}
+			.actions-signup-register,
+			.actions-signup-back {
+				width: 150px;
+			}
+			.actions-login-login,
+			.actions-login-back {
+				width: 180px;
+			}
+		}
+	}
 }
 
-.actions-signup {
-    margin: 5px 0;
+.links-signup {
+	margin: -5px 50px 20px;
+    text-align: center;
 }
 
-.actions-signup-register,
-.actions-login-login,
-.actions-signup-back,
-.actions-login-back {
-	border: 2px solid #000000;
-	box-sizing: border-box;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.actions-signup-register,
-.actions-login-login {
-	background: #C3F4F8;
-}
-.actions-signup-back,
-.actions-login-back {
-	background: #F2D8D8;
-}
-.actions-signup-register,
-.actions-signup-back {
-	width: 150px;
-}
-.actions-login-login,
-.actions-login-back {
-	width: 180px;
-}
-
-.links-signup,
 .links-login {
 	margin: 30px 50px 20px;
     text-align: center;

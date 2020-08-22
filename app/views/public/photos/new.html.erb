@@ -11,8 +11,9 @@
 
 					<div class="col-md-5">
 						<div class="field-photo-new-image">
-							<%= attachment_image_tag @photo, :image, format: 'jpeg' %>
-							<%= f.attachment_field :image %>
+							<%= attachment_image_tag @photo, :image, class: "field-photo-new-image-show", format: 'jpeg' %>
+							<%= f.label :image, class: "btn field-photo-new-image-btn" %>
+							<%= f.attachment_field :image, class: "field-photo-new-image-hide" %>
 						</div>
 					</div>
 
