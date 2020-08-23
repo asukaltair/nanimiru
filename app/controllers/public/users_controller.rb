@@ -8,13 +8,17 @@ class Public::UsersController < ApplicationController
 	end
 
 	def edit
+		if @user.id != current_user.id
+			redirect_to root_path
+		end
 	end
 
 	def update
 		if @user.update(user_params)
 			redirect_to user_path
+		else
+			render :edit
 		end
-
 	end
 
 	private

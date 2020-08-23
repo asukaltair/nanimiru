@@ -20,8 +20,11 @@ class Public::PhotosController < ApplicationController
 	def create
 		@photo = Photo.new(photo_params)
 		@photo.user_id = current_user.id
-		@photo.save
-		redirect_to root_path
+		if @photo.save
+			redirect_to root_path
+		else
+			render :new
+		end
 	end
 
 	def show
@@ -30,16 +33,25 @@ class Public::PhotosController < ApplicationController
 	end
 
 	def edit
+		if @photo.user.id != current_user.id
+			redirect_to root_path
+		end
 	end
 
 	def update
-		@photo.update(photo_params)
-		redirect_to photo_path
+		if @photo.update(photo_params)
+			redirect_to photo_path
+		else
+			render :edit
+		end
 	end
 
 	def destroy
-		@photo.destroy
-		redirect_to root_path
+		if @photo.destroy
+			redirect_to root_path
+		else
+			render :show
+		end
 	end
 
 	def search

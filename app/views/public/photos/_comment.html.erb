@@ -1,32 +1,41 @@
 <% comments.each do |comment| %>
-	<div class="photo-show-comment-detail">
-		<span id="star-rate-<%= comment.id %>" class="photo-show-comment-star"></span>
-		<span class="float-right">
-			<%= link_to user_path(comment.user.name), class: "photo-show-comment-link" do %>
-				<%= comment.user.name %>
-			<% end %>
-		</span>
-			<script>
-				$('#star-rate-<%= comment.id %>').raty({
-					size: 36,
-					starOff:  '<%= asset_path('star-off.png') %>',
-					starOn : '<%= asset_path('star-on.png') %>',
-					starHalf: '<%= asset_path('star-half.png') %>',
-					half: true,
-					readOnly: true,
-					score: <%= comment.star %>,
-				});
-			</script>
+	<% if comment.user == current_user || comment.is_active == true %>
+		<div class="photo-show-comment-detail">
 
-		<div class="photo-show-comment-content">
-			<%= comment.comment %>
-		</div>
-
-		<% if comment.user_id == current_user.id %>
-			<div class="photo-show-comment-btn">
-				<%= link_to 'Edit', edit_photo_comment_path(comment.photo, comment), class: "btn photo-comment-btn-edit" %>
-				<%= link_to 'Destroy', photo_comment_path(comment.photo, comment), class: "btn photo-comment-btn-destroy", method: :delete, remote: true, data: {confirm: "Are you sure?"} %>
+			<div class="my-3 text-center" style="background-color: red; color: #fff;">
+				<% if comment.user == current_user && comment.is_active == false %>
+					このコメントは、adminにより非表示にされています。
+				<% end %>
 			</div>
-		<% end %>
-	</div>
+
+			<span id="star-rate-<%= comment.id %>" class="photo-show-comment-star"></span>
+			<span class="float-right">
+				<%= link_to user_path(comment.user.name), class: "photo-show-comment-link" do %>
+					<%= comment.user.name %>
+				<% end %>
+			</span>
+				<script>
+					$('#star-rate-<%= comment.id %>').raty({
+						size: 36,
+						starOff:  '<%= asset_path('star-off.png') %>',
+						starOn : '<%= asset_path('star-on.png') %>',
+						starHalf: '<%= asset_path('star-half.png') %>',
+						half: true,
+						readOnly: true,
+						score: <%= comment.star %>,
+					});
+				</script>
+
+			<div class="photo-show-comment-content">
+				<%= comment.comment %>
+			</div>
+
+			<% if comment.user_id == current_user.id %>
+				<div class="photo-show-comment-btn">
+					<%= link_to 'Edit', edit_photo_comment_path(comment.photo, comment), class: "btn photo-comment-btn-edit" %>
+					<%= link_to 'Destroy', photo_comment_path(comment.photo, comment), class: "btn photo-comment-btn-destroy", method: :delete, remote: true, data: {confirm: "Are you sure?"} %>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
 <% end %>

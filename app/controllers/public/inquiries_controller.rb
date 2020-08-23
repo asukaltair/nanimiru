@@ -12,6 +12,8 @@ class Public::InquiriesController < ApplicationController
 		if @inquiry.save
 			InquiryMailer.send_mail(@inquiry).deliver
 			redirect_to contact_finish_path
+		else
+			render :new
 		end
 	end
 

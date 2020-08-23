@@ -1,6 +1,13 @@
 <div class="container">
 
 	<div class="photo-show">
+
+		<div class="my-3 text-center" style="background-color: red; color: #fff;">
+			<% if @photo.user == current_user && @photo.is_active == false %>
+				この写真は、adminにより非表示にされています。
+			<% end %>
+		</div>
+
 		<div class="row">
 
 			<div class="col-md-5">

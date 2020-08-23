@@ -1,5 +1,7 @@
 class Photo < ApplicationRecord
 
+	validates :image, presence:true
+
 	attachment :image
 	acts_as_taggable
 

@@ -25,9 +25,9 @@
 					</td>
 					<td class="admin_users-table-btn">
 						<% if user.is_active == true %>
-							<%= link_to 'Hide', admin_user_update_path(user), method: :put, class: "btn admin_users-table-btn-hide" %>
-						<% else %>
 							<%= link_to 'Open', admin_user_update_path(user), method: :put, class: "btn admin_users-table-btn-open" %>
+						<% else %>
+							<%= link_to 'Hide', admin_user_update_path(user), method: :put, class: "btn admin_users-table-btn-hide" %>
 						<% end %>
 					</td>
 				</tr>

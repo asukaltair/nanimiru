@@ -17,9 +17,9 @@
 					<td class="admin_comment-index-table-date"><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></td>
 					<td class="admin_comment-index-table-btn">
 						<% if comment.is_active == true %>
-							<%= link_to 'Hide', admin_photo_comment_path(comment.photo, comment), method: :PUT, class: "btn admin_comment-index-table-btn-hide" %>
-						<% else %>
 							<%= link_to 'Open', admin_photo_comment_path(comment.photo, comment), method: :PUT, class: "btn admin_comment-index-table-btn-open" %>
+						<% else %>
+							<%= link_to 'Hide', admin_photo_comment_path(comment.photo, comment), method: :PUT, class: "btn admin_comment-index-table-btn-hide" %>
 						<% end %>
 					</td>
 				</tr>

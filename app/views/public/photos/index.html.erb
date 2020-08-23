@@ -3,11 +3,13 @@
 	<div class="photo-index mx-auto">
 		<div class="row">
 			<% @photos.each do |photo| %>
-				<div class="col-md-3 px-0">
-					<%= link_to photo_path(photo.id), class: "photo-index-content" do %>
-						<%= attachment_image_tag photo, :image, style: 'width: 95%;', format: 'jpeg' %>
-					<% end %>
-				</div>
+				<% if photo.is_active == true %>
+					<div class="col-md-3 px-0">
+						<%= link_to photo_path(photo.id), class: "photo-index-content" do %>
+							<%= attachment_image_tag photo, :image, style: 'width: 95%;', format: 'jpeg' %>
+						<% end %>
+					</div>
+				<% end %>
 			<% end %>
 		</div>
 	</div>

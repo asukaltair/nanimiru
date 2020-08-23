@@ -1,5 +1,7 @@
 class Public::FavoritesController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def create
 		@photo = Photo.find(params[:photo_id])
 		favorite = Favorite.new

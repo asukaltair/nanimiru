@@ -31,9 +31,9 @@
 				<div class="admin_user-show-user-btn">
 					<% if @user.is_active == true %>
 						<!-- putは置換、patchは更新・変更・修正 -->
-						<%= link_to 'Hide', admin_user_update_path, method: :put, class: "btn admin_user-btn-hide" %>
-					<% else %>
 						<%= link_to 'Open', admin_user_update_path, method: :put, class: "btn admin_user-btn-open" %>
+					<% else %>
+						<%= link_to 'Hide', admin_user_update_path, method: :put, class: "btn admin_user-btn-hide" %>
 					<% end %>
 				</div>
 			</div>

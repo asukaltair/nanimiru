@@ -4,6 +4,12 @@
 		<div class="row">
 
 			<div class="col-md-5">
+				<div class="admin_photo-show-user">
+					<%= link_to admin_user_path(@photo.user), class: "admin_photo-show-user-link" do %>
+						<%= attachment_image_tag @photo.user, :image, class: "admin_photo-show-user", format: 'jpeg' %>
+						<span><%= @photo.user.name %></span>
+					<% end %>
+				</div>
 				<div class="admin_photo-show-image">
 					<%= attachment_image_tag @photo, :image, class: "admin_photo-show-image-content", format: 'jpeg' %>
 				</div>
@@ -17,9 +23,9 @@
 
 						<div class="admin_actions-photo-show col-md-4 offset-md-4 px-0">
 							<% if @photo.is_active == true %>
-								<%= link_to 'Hide', admin_photo_path, class: "btn admin_actions-photo-show-hide", method: :PUT %>
-							<% else %>
 								<%= link_to 'Open', admin_photo_path, class: "btn admin_actions-photo-show-open", method: :PUT %>
+							<% else %>
+								<%= link_to 'Hide', admin_photo_path, class: "btn admin_actions-photo-show-hide", method: :PUT %>
 							<% end %>
 						</div>
 					</div>
@@ -44,7 +50,12 @@
 
 				<% @comments.each do |comment| %>
 					<div class="admin_photo-show-comment">
-						<div id="admin_star-rate-<%= comment.id %>" class="admin_photo-show-comment-star"></div>
+						<span id="admin_star-rate-<%= comment.id %>" class="admin_photo-show-comment-star"></span>
+						<span class="float-right">
+							<%= link_to admin_user_path(comment.user), class: "admin_photo-show-comment-link" do %>
+								<%= comment.user.name %>
+							<% end %>
+						</span>
 							<script>
 								$('#admin_star-rate-<%= comment.id %>').raty({
 									size: 36,
@@ -63,9 +74,9 @@
 
 						<div class="admin_photo-show-comment-btn">
 							<% if comment.is_active == true %>
-								<%= link_to 'Hide', admin_photo_comment_path(comment.photo, comment), class: "btn admin_photo-comment-btn-hide", method: :PUT %>
-							<% else %>
 								<%= link_to 'Open', admin_photo_comment_path(comment.photo, comment), class: "btn admin_photo-comment-btn-open", method: :PUT %>
+							<% else %>
+								<%= link_to 'Hide', admin_photo_comment_path(comment.photo, comment), class: "btn admin_photo-comment-btn-hide", method: :PUT %>
 							<% end %>
 						</div>
 					</div>

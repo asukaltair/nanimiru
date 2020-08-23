@@ -24,6 +24,18 @@
 	border-radius: 10px;
 	font-size: 20px;
 
+	.admin_photo-show-user-link,
+	.admin_photo-show-user-link:hover {
+		color: #000;
+		text-decoration: none;
+
+		.admin_photo-show-user {
+			width: 15%;
+			margin-bottom: 5px;
+			border-radius: 50%;
+		}
+	}
+
 	.admin_photo-show-image-content {
 		width: 100%;
 	}
@@ -62,6 +74,12 @@
 		background-color: #fff;
 		border: 1px solid #000;
 		border-radius: 5px;
+
+		.admin_photo-show-comment-link,
+		.admin_photo-show-comment-link:hover {
+			color: #000;
+			text-decoration: none;
+		}
 	}
 
 	.admin_photo-show-comment-btn {
