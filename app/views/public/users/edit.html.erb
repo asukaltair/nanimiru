@@ -26,7 +26,7 @@
 			<div class="field-user-edit mt-3">
 				<div class="row">
 					<div class="col-md-3 offset-md-1">
-						<%= attachment_image_tag @user, :image, class: "field-user-edit-image-show", format: 'jpeg', fallback: 'no-user-image.png' %>
+						<%= attachment_image_tag @user, :image, id: "user-edit-image", class: "field-user-edit-image-show", format: 'jpeg', fallback: 'no-user-image.png' %>
 					</div>
 					<div class="col-md-3">
 						<div class="field-user-edit-image">
@@ -52,4 +52,16 @@
 	</div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+<script>
+
+	$('#user_image').on('change', function (e) {
+	    var reader = new FileReader();
+	    reader.onload = function (e) {
+	        $("#user-edit-image").attr('src', e.target.result);
+	    }
+	    reader.readAsDataURL(e.target.files[0]);
+	});
+
+</script>

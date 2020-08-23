@@ -32,7 +32,7 @@
       <div class="field-signup">
         <div class="row">
           <div class="col-md-3 offset-md-1">
-            <%= attachment_image_tag @user, :image, class: "field-signup-image-show", format: 'jpeg', fallback: 'no-user-image.png' %>
+            <%= attachment_image_tag @user, :image, id: "user-new-image", class: "field-signup-image-show", format: 'jpeg', fallback: 'no-user-image.png' %>
           </div>
           <div class="col-md-3">
             <div class="field-signup-image">
@@ -63,3 +63,17 @@
 
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+
+  $('#user_image').on('change', function (e) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+          $("#user-new-image").attr('src', e.target.result);
+      }
+      reader.readAsDataURL(e.target.files[0]);
+  });
+
+</script>

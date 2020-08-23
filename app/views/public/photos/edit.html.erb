@@ -11,7 +11,7 @@
 
 					<div class="col-md-5">
 						<div class="field-photo-edit-image">
-							<%= attachment_image_tag @photo, :image, class: "field-photo-edit-image-show", format: 'jpeg' %>
+							<%= attachment_image_tag @photo, :image, id: "photo-edit-image", class: "field-photo-edit-image-show", format: 'jpeg' %>
 							<%= f.label :image, class: "btn field-photo-edit-image-btn" %>
 							<%= f.attachment_field :image, class: "field-photo-edit-image-hide" %>
 						</div>
@@ -37,3 +37,17 @@
 	</div>
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+
+	$('#photo_image').on('change', function (e) {
+	    var reader = new FileReader();
+	    reader.onload = function (e) {
+	        $("#photo-edit-image").attr('src', e.target.result);
+	    }
+	    reader.readAsDataURL(e.target.files[0]);
+	});
+
+</script>
