@@ -83,7 +83,7 @@ footer {
 
 	.field-signup-title,
 	.field-login-title {
-		height: 70px;
+		height: 60px;
 		width: 35%;
 		text-align: right;
 	}
@@ -97,6 +97,7 @@ footer {
 		input[type="password"] {
 			height: 40px;
 			width: 75%;
+			padding: 0 10px;
 			background: rgba(223, 222, 222, 0.81);
 			border: 1px solid #000000;
 			box-sizing: border-box;
@@ -115,7 +116,6 @@ footer {
 			width: 50%;
 			padding: 5px 0;
 			margin-top: 95px;
-			border: 2px solid #000000;
 			box-sizing: border-box;
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 			background: #ddd27e;
@@ -136,7 +136,6 @@ footer {
 			.actions-login-login,
 			.actions-signup-back,
 			.actions-login-back {
-				border: 2px solid #000000;
 				box-sizing: border-box;
 				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 			}
@@ -160,11 +159,7 @@ footer {
 	}
 }
 
-.links-signup {
-	margin: -5px 50px 20px;
-    text-align: center;
-}
-
+.links-signup,
 .links-login {
 	margin: 30px 50px 20px;
     text-align: center;

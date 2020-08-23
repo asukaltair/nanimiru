@@ -34,7 +34,7 @@
 				<div class="row px-2">
 					<% @users.each do |user| %>
 						<div class="col-md-3" style="text-align: center;">
-							<%= link_to user_path(user), class: "search-results-user-content" do %>
+							<%= link_to user_path(user.name), class: "search-results-user-content" do %>
 								<%= attachment_image_tag user, :image, class: "search-results-user-image", format: 'jpeg', fallback: 'no-user-image.png' %> <br>
 								<%= user.name %>
 							<% end %>

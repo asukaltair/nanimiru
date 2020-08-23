@@ -1,6 +1,11 @@
 <% comments.each do |comment| %>
 	<div class="photo-show-comment-detail">
-		<div id="star-rate-<%= comment.id %>" class="photo-show-comment-star"></div>
+		<span id="star-rate-<%= comment.id %>" class="photo-show-comment-star"></span>
+		<span class="float-right">
+			<%= link_to user_path(comment.user.name), class: "photo-show-comment-link" do %>
+				<%= comment.user.name %>
+			<% end %>
+		</span>
 			<script>
 				$('#star-rate-<%= comment.id %>').raty({
 					size: 36,

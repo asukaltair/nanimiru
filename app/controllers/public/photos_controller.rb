@@ -5,7 +5,9 @@ class Public::PhotosController < ApplicationController
 
 	def index
 		if user_signed_in?
-			@photos = Photo.where(user_id: current_user.id)
+			ids = Relationship.where(follower_id: current_user).pluck(:followed_id)
+			ids.push(current_user.id)
+			@photos = Photo.where(user_id: ids)
 		else
 			@photos = Photo.all
 		end

@@ -50,7 +50,6 @@
 			width: 50%;
 			padding: 5px 0;
 			margin-top: 50px;
-			border: 2px solid #000000;
 			box-sizing: border-box;
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 			background: #ddd27e;
@@ -70,9 +69,13 @@
 	.actions-photo-new,
 	.field-photo-edit-text,
 	.field-photo-edit-tag,
-	.actions-photo-edit, {
+	.actions-photo-edit {
 		padding-left: 30px;
-		margin: 20px 0;
+	}
+
+	.actions-photo-new,
+	.actions-photo-edit {
+		margin-top: 30px;
 	}
 
 	input[type="text"] {
@@ -81,6 +84,8 @@
 	input[type="text"],
 	textarea {
 		width: 80%;
+		padding: 10px;
+		font-size: 15px;
 		background: rgba(223, 222, 222, 0.81);
 		border: 1px solid #000000;
 		box-sizing: border-box;
@@ -95,7 +100,6 @@
 		.actions-photo-new-post,
 		.actions-photo-edit-update {
 			width: 130px;
-			border: 2px solid #000000;
 			box-sizing: border-box;
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		}
@@ -112,12 +116,24 @@
 /* photos/show */
 
 .photo-show {
-	margin: 0 auto;
+	margin: 0 auto 20px;
 	padding: 30px;
 	width: 80%;
 	background-color: #00000040;
 	border-radius: 10px;
 	font-size: 20px;
+
+	.photo-show-user-link,
+	.photo-show-user-link:hover {
+		color: #000;
+		text-decoration: none;
+
+		.photo-show-user {
+			width: 15%;
+			margin-bottom: 5px;
+			border-radius: 50%;
+		}
+	}
 
 	.photo-show-image-content {
 		width: 100%;
@@ -126,22 +142,38 @@
 	.field-photo-show {
 		width: 90%;
 		margin: 5px auto;
+
+		.favorite-icon,
+		.favorite-icon:hover {
+			color: #000;
+			text-decoration: none;
+		}
+
+		.actions-photo-show-edit,
+		.actions-photo-show-destroy {
+			width: 48%;
+			padding: 5px 0;
+			box-sizing: border-box;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		}
+		.actions-photo-show-edit {
+			background: #AEDD7E;
+		}
+		.actions-photo-show-destroy {
+			background: #F2D8D8;
+		}
 	}
-	.actions-photo-show-edit,
-	.actions-photo-show-destroy {
-		width: 48%;
-		padding: 5px 0;
-		box-sizing: border-box;
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	}
-	.actions-photo-show-edit {
-		background: #AEDD7E;
-	}
-	.actions-photo-show-destroy {
-		background: #F2D8D8;
+
+	.photo-show-text {
+		font-size: 15px;
+		padding: 5px;
+		margin: 10px 0;
+		border-radius: 5px;
+		background: #ffffffb8;
 	}
 
 	.photo-show-tag-content {
+		white-space: nowrap;
 		font-size: 15px;
 		background: #ff9522;
 		color: #fff;
@@ -156,6 +188,8 @@
 
 		textarea {
 			width: 100%;
+			padding: 10px;
+			font-size: 15px;
 			display: block;
 			background: rgba(223, 222, 222, 0.81);
 			border: 1px solid #000000;
@@ -172,6 +206,7 @@
 			.actions-post-comment-post {
 				background: #C3F4F8;
 				padding: 5px 20px;
+				margin-top: 15px;
 				box-sizing: border-box;
 				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 			}
@@ -179,11 +214,18 @@
 	}
 
 	.photo-show-comment-detail {
+		font-size: 18px;
 		margin-bottom: 10px;
 		padding: 10px;
 		background-color: #fff;
 		border: 1px solid #000;
 		border-radius: 5px;
+
+		.photo-show-comment-link,
+		.photo-show-comment-link:hover {
+			color: #000;
+			text-decoration: none;
+		}
 	}
 
 	.photo-show-comment-btn {
@@ -217,7 +259,6 @@
 
 	.actions-field-search-search {
 		padding: 5px 10px;
-		border: 2px solid #000000;
 		box-sizing: border-box;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		background: #C3F4F8;
