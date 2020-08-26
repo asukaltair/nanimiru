@@ -69,3 +69,7 @@ gem 'refile-mini_magick'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'acts-as-taggable-on', '~> 6.0'
 
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
