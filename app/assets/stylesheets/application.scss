@@ -165,3 +165,18 @@ footer {
     text-align: center;
 }
 
+.about {
+	margin: 0 auto;
+	padding: 50px 0;
+	width: 70%;
+	text-align: center;
+	background-color: #00000040;
+	border-radius: 10px;
+	font-size: 20px;
+
+	.about-name,
+	.about-description {
+		margin: 50px 0;
+		color: #fff;
+	}
+}

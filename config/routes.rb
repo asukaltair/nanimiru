@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :public do
+    get 'homes/about'
+  end
 	devise_for :admins, controllers: {
 		sessions:      'admin/sessions',
 		passwords:     'admin/passwords',
@@ -35,6 +38,8 @@ Rails.application.routes.draw do
 			resources :comments, only: [:create, :edit, :update, :destroy]
 			resource :favorites, only: [:create, :destroy]
 		end
+
+		get 'about' => 'homes#about', as: 'about'
 
 		get 'users/:name' => 'users#show', as: 'user'
 		get 'users/:name/edit' => 'users#edit', as: 'user_edit'
