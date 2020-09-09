@@ -1,33 +1,33 @@
 <div class="container">
 
-	<div class="form-contact">
+  <div class="form-contact">
 
-		<h2 class="contact-name">Contact</h2>
+    <h2 class="contact-name">Contact</h2>
 
-		<%= form_with model: @inquiry, local: true do |f| %>
+    <%= form_with model: @inquiry, local: true do |f| %>
 
-			<div class="field-contact">
-				<table style='width: 100%;'>
-					<tr>
-						<td class="field-contact-title"><%= f.label :name %></td>
-            			<td class="field-contact-content"><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
-					</tr>
-					<tr>
-						<td class="field-contact-title"><%= f.label :email %></td>
-            			<td class="field-contact-content"><%= f.email_field :mail, autofocus: true, autocomplete: "email" %></td>
-					</tr>
-					<tr>
-						<td class="field-contact-title"><%= f.label :message %></td>
-            			<td class="field-contact-content"><%= f.text_area :message, rows: "4", autofocus: true, autocomplete: "message" %></td>
-					</tr>
-				</table>
-				<div class="actions-contact">
-					<%= f.submit 'Send', class: "btn actions-contact-send mx-auto" %>
-				</div>
-			</div>
+      <div class="field-contact">
+        <table style='width: 100%;'>
+          <tr>
+            <td class="field-contact-title"><%= f.label :name %></td>
+                  <td class="field-contact-content"><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+          </tr>
+          <tr>
+            <td class="field-contact-title"><%= f.label :email %></td>
+                  <td class="field-contact-content"><%= f.email_field :mail, autofocus: true, autocomplete: "email" %></td>
+          </tr>
+          <tr>
+            <td class="field-contact-title"><%= f.label :message %></td>
+                  <td class="field-contact-content"><%= f.text_area :message, rows: "4", autofocus: true, autocomplete: "message" %></td>
+          </tr>
+        </table>
+        <div class="actions-contact">
+          <%= f.submit 'Send', class: "btn actions-contact-send mx-auto" %>
+        </div>
+      </div>
 
-		<% end %>
+    <% end %>
 
-	</div>
+  </div>
 
 </div>

@@ -5,152 +5,152 @@
 /* users/show */
 
 .user-show-user {
-	margin: 0 auto;
-	padding: 20px 0;
-	width: 95%;
-	background-color: #00000040;
-	border-radius: 10px;
-	font-size: 20px;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 95%;
+  background-color: #00000040;
+  border-radius: 10px;
+  font-size: 20px;
 
-	.user-show-user-image {
-		text-align: center;
+  .user-show-user-image {
+    text-align: center;
 
-		.user-image-content {
-			width: 80%;
-			border-radius: 50px;
-		}
-	}
-	.user-show-user-name {
-		font-size: 25px;
-		padding: 5px 10px;
-	}
-	.user-show-user-introduction {
-		font-size: 18px;
-		padding: 5px 10px;
-	}
-	.user-show-user-follow {
-		text-align: center;
-		font-size: 15px;
-		margin: 10px 0;
+    .user-image-content {
+      width: 80%;
+      border-radius: 50px;
+    }
+  }
+  .user-show-user-name {
+    font-size: 25px;
+    padding: 5px 10px;
+  }
+  .user-show-user-introduction {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+  .user-show-user-follow {
+    text-align: center;
+    font-size: 15px;
+    margin: 10px 0;
 
-		.user-follow-content,
-		.user-follow-content:hover {
-			color: #000;
-			text-decoration: none;
-		}
-	}
-	.user-show-user-btn {
-		text-align: center;
+    .user-follow-content,
+    .user-follow-content:hover {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+  .user-show-user-btn {
+    text-align: center;
 
-		.user-btn-edit,
-		.user-btn-unfollow,
-		.user-btn-follow {
-			padding: 5px 50px !important;
-			margin: 10px 0;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		}
-		.user-btn-edit {
-			background: #AEDD7E !important;
-		}
-		.user-btn-unfollow {
-			background: #F2D8D8 !important;
-		}
-		.user-btn-follow {
-			background: #C3F4F8 !important;
-		}
-	}
+    .user-btn-edit,
+    .user-btn-unfollow,
+    .user-btn-follow {
+      padding: 5px 50px !important;
+      margin: 10px 0;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .user-btn-edit {
+      background: #AEDD7E !important;
+    }
+    .user-btn-unfollow {
+      background: #F2D8D8 !important;
+    }
+    .user-btn-follow {
+      background: #C3F4F8 !important;
+    }
+  }
 }
 
 .user-photo-content {
-	width: 100%;
+  width: 100%;
 }
 
 
 /* users/edit */
 
 .form-user-edit {
-	margin: 0 auto;
-	padding: 20px 0;
-	width: 70%;
-	background-color: #00000040;
-	border-radius: 10px;
-	font-size: 20px;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 70%;
+  background-color: #00000040;
+  border-radius: 10px;
+  font-size: 20px;
 
-	.user-edit-name {
-		padding: 20px 0 0 50px;
-		color: #fff;
-	}
+  .user-edit-name {
+    padding: 20px 0 0 50px;
+    color: #fff;
+  }
 
-	.field-user-edit-title {
-		height: 70px;
-		width: 35%;
-		text-align: right;
-	}
-	.field-user-edit-content {
-	    padding-left: 50px;
-		width: 65%;
+  .field-user-edit-title {
+    height: 70px;
+    width: 35%;
+    text-align: right;
+  }
+  .field-user-edit-content {
+      padding-left: 50px;
+    width: 65%;
 
-		input[type="text"],
-		input[type="email"] {
-			height: 40px;
-			width: 75%;
-			padding: 0 10px;
-			background: rgba(223, 222, 222, 0.81);
-			border: 1px solid #000000;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		}
-		textarea {
-			width: 75%;
-			padding: 0 10px;
-			background: rgba(223, 222, 222, 0.81);
-			border: 1px solid #000000;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		}
-	}
+    input[type="text"],
+    input[type="email"] {
+      height: 40px;
+      width: 75%;
+      padding: 0 10px;
+      background: rgba(223, 222, 222, 0.81);
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    textarea {
+      width: 75%;
+      padding: 0 10px;
+      background: rgba(223, 222, 222, 0.81);
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
 
-	.field-user-edit-image-show {
-		width: 100%;
-	}
+  .field-user-edit-image-show {
+    width: 100%;
+  }
 
-	.field-user-edit-image {
-		text-align: center;
+  .field-user-edit-image {
+    text-align: center;
 
-		.field-user-edit-image-btn {
-			width: 50%;
-			padding: 5px 0;
-			margin-top: 95px;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-			background: #ddd27e;
-		}
-		.field-user-edit-image-hide {
-			display: none;
-		}
-	}
+    .field-user-edit-image-btn {
+      width: 50%;
+      padding: 5px 0;
+      margin-top: 95px;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      background: #ddd27e;
+    }
+    .field-user-edit-image-hide {
+      display: none;
+    }
+  }
 
-	.actions {
-		padding-top: 27px;
+  .actions {
+    padding-top: 27px;
 
-		.actions-user-edit {
-		    margin: 15px 0;
+    .actions-user-edit {
+        margin: 15px 0;
 
-		    .actions-user-edit-update,
-			.actions-user-edit-back {
-				width: 150px;
-				box-sizing: border-box;
-				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-			}
-			.actions-user-edit-update {
-				background: #AEDD7E;
-			}
-			.actions-user-edit-back {
-				background: #F2D8D8;
-			}
-		}
-	}
+        .actions-user-edit-update,
+      .actions-user-edit-back {
+        width: 150px;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+      .actions-user-edit-update {
+        background: #AEDD7E;
+      }
+      .actions-user-edit-back {
+        background: #F2D8D8;
+      }
+    }
+  }
 }
 
 

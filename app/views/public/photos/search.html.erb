@@ -1,69 +1,69 @@
 <div class="container">
-	<div class="form-search mx-auto mb-3 text-right">
-		<%= form_tag(search_path, method: :get) do %>
-			<span class="field-search-field mx-2">
-				<%= text_field_tag :search, params[:search], :placeholder =>"検索" %>
-			</span>
-			<span class="actions-field-search">
-				<%= submit_tag 'Search', class: "btn actions-field-search-search" %>
-			</span>
-		<% end %>
-	</div>
+  <div class="form-search mx-auto mb-3 text-right">
+    <%= form_tag(search_path, method: :get) do %>
+      <span class="field-search-field mx-2">
+        <%= text_field_tag :search, params[:search], :placeholder =>"検索" %>
+      </span>
+      <span class="actions-field-search">
+        <%= submit_tag 'Search', class: "btn actions-field-search-search" %>
+      </span>
+    <% end %>
+  </div>
 
-	<% if params[:search].blank? %>
+  <% if params[:search].blank? %>
 
-		<div class="search-results-photo mx-auto">
-			<div class="row">
-				<% @photos.each do |photo| %>
-					<% if photo.is_active == true %>
-						<div class="col-md-3 px-0">
-							<%= link_to photo_path(photo.id), class: "search-results-photo-content" do %>
-								<%= attachment_image_tag photo, :image, style: 'width: 95%;', format: 'jpeg' %>
-							<% end %>
-						</div>
-					<% end %>
-				<% end %>
-			</div>
-		</div>
+    <div class="search-results-photo mx-auto">
+      <div class="row">
+        <% @photos.each do |photo| %>
+          <% if photo.is_active == true %>
+            <div class="col-md-3 px-0">
+              <%= link_to photo_path(photo.id), class: "search-results-photo-content" do %>
+                <%= attachment_image_tag photo, :image, style: 'width: 95%;', format: 'jpeg' %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 
-	<% else %>
+  <% else %>
 
-		<div class="search-results">
-			<h2 class="search-results-word">Search for "<%= @word %>"</h2>
+    <div class="search-results">
+      <h2 class="search-results-word">Search for "<%= @word %>"</h2>
 
-			<div class="search-results-user mx-auto">
-				<h2 class="search-results-user-name text-left">User</h2>
-				<div class="row px-2">
-					<% @users.each do |user| %>
-						<% if user.is_active == true %>
-							<div class="col-md-3" style="text-align: center;">
-								<%= link_to user_path(user.name), class: "search-results-user-content" do %>
-									<%= attachment_image_tag user, :image, class: "search-results-user-image", format: 'jpeg', fallback: 'no-user-image.png' %> <br>
-									<%= user.name %>
-								<% end %>
-							</div>
-						<% end %>
-					<% end %>
-				</div>
-			</div>
+      <div class="search-results-user mx-auto">
+        <h2 class="search-results-user-name text-left">User</h2>
+        <div class="row px-2">
+          <% @users.each do |user| %>
+            <% if user.is_active == true %>
+              <div class="col-md-3" style="text-align: center;">
+                <%= link_to user_path(user.name), class: "search-results-user-content" do %>
+                  <%= attachment_image_tag user, :image, class: "search-results-user-image", format: 'jpeg', fallback: 'no-user-image.png' %> <br>
+                  <%= user.name %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
 
-			<div class="search-results-tag mx-auto">
-				<h2 class="search-results-tag-name text-left">Tag</h2>
-				<div class="row px-2">
-					<% @photo_tags.each do |tag| %>
-						<% if tag.is_active == true %>
-							<div class="col-md-3" style="text-align: center;">
-								<%= link_to photo_path(tag), class: "search-results-tag-content" do %>
-									<%= attachment_image_tag tag, :image, style: 'width: 95%;', format: 'jpeg' %>
-								<% end %>
-							</div>
-						<% end %>
-					<% end %>
-				</div>
-			</div>
-		</div>
+      <div class="search-results-tag mx-auto">
+        <h2 class="search-results-tag-name text-left">Tag</h2>
+        <div class="row px-2">
+          <% @photo_tags.each do |tag| %>
+            <% if tag.is_active == true %>
+              <div class="col-md-3" style="text-align: center;">
+                <%= link_to photo_path(tag), class: "search-results-tag-content" do %>
+                  <%= attachment_image_tag tag, :image, style: 'width: 95%;', format: 'jpeg' %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
-	<% end %>
+  <% end %>
 
 </div>
 

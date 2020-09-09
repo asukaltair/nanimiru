@@ -1,90 +1,90 @@
 <div class="container">
 
-	<div class="admin_photo-show">
-		<div class="row">
+  <div class="admin_photo-show">
+    <div class="row">
 
-			<div class="col-md-5">
-				<div class="admin_photo-show-user">
-					<%= link_to admin_user_path(@photo.user), class: "admin_photo-show-user-link" do %>
-						<%= attachment_image_tag @photo.user, :image, class: "admin_photo-show-user", format: 'jpeg' %>
-						<span><%= @photo.user.name %></span>
-					<% end %>
-				</div>
-				<div class="admin_photo-show-image">
-					<%= attachment_image_tag @photo, :image, class: "admin_photo-show-image-content", format: 'jpeg' %>
-				</div>
+      <div class="col-md-5">
+        <div class="admin_photo-show-user">
+          <%= link_to admin_user_path(@photo.user), class: "admin_photo-show-user-link" do %>
+            <%= attachment_image_tag @photo.user, :image, class: "admin_photo-show-user", format: 'jpeg' %>
+            <span><%= @photo.user.name %></span>
+          <% end %>
+        </div>
+        <div class="admin_photo-show-image">
+          <%= attachment_image_tag @photo, :image, class: "admin_photo-show-image-content", format: 'jpeg' %>
+        </div>
 
-				<div class="admin_field-photo-show">
-					<div class="row">
-						<div class="admin_photo-show-favorite col-md-4">
-							<i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
-							<%= @photo.favorites.count %>
-						</div>
+        <div class="admin_field-photo-show">
+          <div class="row">
+            <div class="admin_photo-show-favorite col-md-4">
+              <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+              <%= @photo.favorites.count %>
+            </div>
 
-						<div class="admin_actions-photo-show col-md-4 offset-md-4 px-0">
-							<% if @photo.is_active == true %>
-								<%= link_to 'Open', admin_photo_path, class: "btn admin_actions-photo-show-open", method: :PUT %>
-							<% else %>
-								<%= link_to 'Hide', admin_photo_path, class: "btn admin_actions-photo-show-hide", method: :PUT %>
-							<% end %>
-						</div>
-					</div>
-				</div>
+            <div class="admin_actions-photo-show col-md-4 offset-md-4 px-0">
+              <% if @photo.is_active == true %>
+                <%= link_to 'Open', admin_photo_path, class: "btn admin_actions-photo-show-open", method: :PUT %>
+              <% else %>
+                <%= link_to 'Hide', admin_photo_path, class: "btn admin_actions-photo-show-hide", method: :PUT %>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
-				<div class="admin_field-photo-show">
-					<div class="admin_photo-show-text">
-						<%= @photo.text %>
-					</div>
-				</div>
+        <div class="admin_field-photo-show">
+          <div class="admin_photo-show-text">
+            <%= @photo.text %>
+          </div>
+        </div>
 
-				<div class="admin_field-photo-show">
-					<div class="admin_photo-show-tag">
-						<% @photo.tag_list.each do |tag| %>
-							<span class="admin_photo-show-tag-content"><%= tag %></span>
-						<% end %>
-					</div>
-				</div>
-			</div>
+        <div class="admin_field-photo-show">
+          <div class="admin_photo-show-tag">
+            <% @photo.tag_list.each do |tag| %>
+              <span class="admin_photo-show-tag-content"><%= tag %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
 
-			<div class="col-md-7">
+      <div class="col-md-7">
 
-				<% @comments.each do |comment| %>
-					<div class="admin_photo-show-comment">
-						<span id="admin_star-rate-<%= comment.id %>" class="admin_photo-show-comment-star"></span>
-						<span class="float-right">
-							<%= link_to admin_user_path(comment.user), class: "admin_photo-show-comment-link" do %>
-								<%= comment.user.name %>
-							<% end %>
-						</span>
-							<script>
-								$('#admin_star-rate-<%= comment.id %>').raty({
-									size: 36,
-									starOff:  '<%= asset_path('star-off.png') %>',
-									starOn : '<%= asset_path('star-on.png') %>',
-									starHalf: '<%= asset_path('star-half.png') %>',
-									half: true,
-									readOnly: true,
-									score: <%= comment.star %>,
-								});
-							</script>
+        <% @comments.each do |comment| %>
+          <div class="admin_photo-show-comment">
+            <span id="admin_star-rate-<%= comment.id %>" class="admin_photo-show-comment-star"></span>
+            <span class="float-right">
+              <%= link_to admin_user_path(comment.user), class: "admin_photo-show-comment-link" do %>
+                <%= comment.user.name %>
+              <% end %>
+            </span>
+              <script>
+                $('#admin_star-rate-<%= comment.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= comment.star %>,
+                });
+              </script>
 
-						<div class="admin_photo-show-comment-content">
-							<%= comment.comment %>
-						</div>
+            <div class="admin_photo-show-comment-content">
+              <%= comment.comment %>
+            </div>
 
-						<div class="admin_photo-show-comment-btn">
-							<% if comment.is_active == true %>
-								<%= link_to 'Open', admin_photo_comment_path(comment.photo, comment), class: "btn admin_photo-comment-btn-open", method: :PUT %>
-							<% else %>
-								<%= link_to 'Hide', admin_photo_comment_path(comment.photo, comment), class: "btn admin_photo-comment-btn-hide", method: :PUT %>
-							<% end %>
-						</div>
-					</div>
-				<% end %>
+            <div class="admin_photo-show-comment-btn">
+              <% if comment.is_active == true %>
+                <%= link_to 'Open', admin_photo_comment_path(comment.photo, comment), class: "btn admin_photo-comment-btn-open", method: :PUT %>
+              <% else %>
+                <%= link_to 'Hide', admin_photo_comment_path(comment.photo, comment), class: "btn admin_photo-comment-btn-hide", method: :PUT %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
 
-			</div>
+      </div>
 
-		</div>
-	</div>
+    </div>
+  </div>
 
 </div>

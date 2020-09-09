@@ -5,123 +5,123 @@
 /* users/index */
 
 .admin_users {
-	margin: 0 auto;
-	padding: 20px 0;
-	width: 85%;
-	background-color: #00000040;
-	border-radius: 10px;
-	font-size: 20px;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 85%;
+  background-color: #00000040;
+  border-radius: 10px;
+  font-size: 20px;
 
-	.admin_users-name {
-		padding: 20px 0 0 50px;
-		color: #fff;
-	}
+  .admin_users-name {
+    padding: 20px 0 0 50px;
+    color: #fff;
+  }
 
-	.admin_users-table {
-		width: 90%;
-		margin: 0 auto;
+  .admin_users-table {
+    width: 90%;
+    margin: 0 auto;
 
-		td {
-			padding: 10px 0;
-		}
+    td {
+      padding: 10px 0;
+    }
 
-		.admin_users-table-image {
-			width: 17%;
-			text-align: center;
+    .admin_users-table-image {
+      width: 17%;
+      text-align: center;
 
-			.admin_users-table-image-content {
-				width: 65%;
-				border-radius: 50px;
-			}
-		}
-		.admin_users-table-name,
-		.admin_users-table-photo {
-			width: 18%;
-		}
-		.admin_users-table-photo,
-		.admin_table-following,
-		.admin_table-follower,
-		.admin_table-following:hover,
-		.admin_table-follower:hover {
-			color: #585858;
-			text-decoration: none;
-		}
-		.admin_users-table-btn {
-			width: 15%;
-		}
+      .admin_users-table-image-content {
+        width: 65%;
+        border-radius: 50px;
+      }
+    }
+    .admin_users-table-name,
+    .admin_users-table-photo {
+      width: 18%;
+    }
+    .admin_users-table-photo,
+    .admin_table-following,
+    .admin_table-follower,
+    .admin_table-following:hover,
+    .admin_table-follower:hover {
+      color: #585858;
+      text-decoration: none;
+    }
+    .admin_users-table-btn {
+      width: 15%;
+    }
 
-		.admin_users-table-btn-hide,
-		.admin_users-table-btn-open {
-			width: 100%;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		}
-		.admin_users-table-btn-hide {
-			background: #AEDD7E;
-		}
-		.admin_users-table-btn-open {
-			background: #C3F4F8;
-		}
-	}
+    .admin_users-table-btn-hide,
+    .admin_users-table-btn-open {
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .admin_users-table-btn-hide {
+      background: #AEDD7E;
+    }
+    .admin_users-table-btn-open {
+      background: #C3F4F8;
+    }
+  }
 }
 
 
 /* users/show */
 
 .admin_user-show-user {
-	margin: 0 auto;
-	padding: 20px 0;
-	width: 95%;
-	background-color: #00000040;
-	border-radius: 10px;
-	font-size: 20px;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 95%;
+  background-color: #00000040;
+  border-radius: 10px;
+  font-size: 20px;
 
-	.admin_user-show-user-image {
-		text-align: center;
+  .admin_user-show-user-image {
+    text-align: center;
 
-		.admin_user-image-content {
-			width: 80%;
-			border-radius: 50px;
-		}
-	}
-	.admin_user-show-user-name {
-		font-size: 25px;
-		padding: 5px 10px;
-	}
-	.admin_user-show-user-introduction {
-		font-size: 18px;
-		padding: 5px 10px;
-	}
-	.admin_user-show-user-follow {
-		text-align: center;
-		font-size: 15px;
-		margin: 10px 0;
+    .admin_user-image-content {
+      width: 80%;
+      border-radius: 50px;
+    }
+  }
+  .admin_user-show-user-name {
+    font-size: 25px;
+    padding: 5px 10px;
+  }
+  .admin_user-show-user-introduction {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+  .admin_user-show-user-follow {
+    text-align: center;
+    font-size: 15px;
+    margin: 10px 0;
 
-		.admin_user-follow-content,
-		.admin_user-follow-content:hover {
-			color: #000;
-			text-decoration: none;
-		}
-	}
-	.admin_user-show-user-btn {
-		text-align: center;
+    .admin_user-follow-content,
+    .admin_user-follow-content:hover {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+  .admin_user-show-user-btn {
+    text-align: center;
 
-		.admin_user-btn-hide,
-		.admin_user-btn-open {
-			padding: 5px 50px !important;
-			margin: 10px 0;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		}
-		.admin_user-btn-hide {
-			background: #AEDD7E !important;
-		}
-		.admin_user-btn-open {
-			background: #C3F4F8 !important;
-		}
-	}
+    .admin_user-btn-hide,
+    .admin_user-btn-open {
+      padding: 5px 50px !important;
+      margin: 10px 0;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .admin_user-btn-hide {
+      background: #AEDD7E !important;
+    }
+    .admin_user-btn-open {
+      background: #C3F4F8 !important;
+    }
+  }
 }
 
 .admin_user-photo-content {
-	width: 100%;
+  width: 100%;
 }

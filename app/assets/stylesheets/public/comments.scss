@@ -3,46 +3,46 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comment-edit {
-	margin: 0 auto;
-	padding: 20px;
-	width: 70%;
-	background-color: #00000040;
-	border-radius: 10px;
-	font-size: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 70%;
+  background-color: #00000040;
+  border-radius: 10px;
+  font-size: 20px;
 
-	.comment-edit-name {
-		padding: 20px 0 0 30px;
-		color: #fff;
-	}
+  .comment-edit-name {
+    padding: 20px 0 0 30px;
+    color: #fff;
+  }
 
-	.comment-edit-image-content {
-		width: 100%;
-	}
+  .comment-edit-image-content {
+    width: 100%;
+  }
 
-	textarea {
-		display: block;
-		font-size: 15px;
-		width: 85%;
-		padding: 10px;
-		font-size: 15px;
-		background: rgba(223, 222, 222, 0.81);
-		border: 1px solid #000000;
-		box-sizing: border-box;
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	}
-	#star {
-		width: 85%;
-		text-align: right;
-	}
-	.actions-comment-edit {
-		width: 85%;
-		text-align: right;
+  textarea {
+    display: block;
+    font-size: 15px;
+    width: 85%;
+    padding: 10px;
+    font-size: 15px;
+    background: rgba(223, 222, 222, 0.81);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  #star {
+    width: 85%;
+    text-align: right;
+  }
+  .actions-comment-edit {
+    width: 85%;
+    text-align: right;
 
-		.actions-comment-edit-update {
-			background: #C3F4F8;
-			padding: 5px 20px;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		}
-	}
+    .actions-comment-edit-update {
+      background: #C3F4F8;
+      padding: 5px 20px;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
 }
