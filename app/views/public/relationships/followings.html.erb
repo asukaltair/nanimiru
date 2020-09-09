@@ -1,9 +1,9 @@
 <div class="container">
 
-	<div class="relationship-following">
-		<h2 class="relationship-following-name"><%= @user.name %>'s followings</h2>
+  <div class="relationship-following">
+    <h2 class="relationship-following-name"><%= @user.name %>'s followings</h2>
 
-		<%= render partial: "list", collection: @users, as: :user %>
+    <%= render partial: "list", collection: @users, as: :user %>
 
-	</div>
+  </div>
 </div>

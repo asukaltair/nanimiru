@@ -1,89 +1,89 @@
 <div class="container">
 
-	<div class="photo-show">
+  <div class="photo-show">
 
-		<div class="my-3 text-center" style="background-color: red; color: #fff;">
-			<% if @photo.user == current_user && @photo.is_active == false %>
-				この写真は、adminにより非表示にされています。
-			<% end %>
-		</div>
+    <div class="my-3 text-center" style="background-color: red; color: #fff;">
+      <% if @photo.user == current_user && @photo.is_active == false %>
+        この写真は、adminにより非表示にされています。
+      <% end %>
+    </div>
 
-		<div class="row">
+    <div class="row">
 
-			<div class="col-md-5">
-				<div class="photo-show-user">
-					<%= link_to user_path(@photo.user.name), class: "photo-show-user-link" do %>
-						<%= attachment_image_tag @photo.user, :image, class: "photo-show-user", format: 'jpeg' %>
-						<span><%= @photo.user.name %></span>
-					<% end %>
-				</div>
-				<div class="photo-show-image">
-					<%= attachment_image_tag @photo, :image, class: "photo-show-image-content", format: 'jpeg' %>
-				</div>
+      <div class="col-md-5">
+        <div class="photo-show-user">
+          <%= link_to user_path(@photo.user.name), class: "photo-show-user-link" do %>
+            <%= attachment_image_tag @photo.user, :image, class: "photo-show-user", format: 'jpeg' %>
+            <span><%= @photo.user.name %></span>
+          <% end %>
+        </div>
+        <div class="photo-show-image">
+          <%= attachment_image_tag @photo, :image, class: "photo-show-image-content", format: 'jpeg' %>
+        </div>
 
-				<div class="field-photo-show">
-					<div class="row">
-						<div class="photo-show-favorite col-md-4">
-							<%= render 'favorite', photo: @photo %>
-						</div>
+        <div class="field-photo-show">
+          <div class="row">
+            <div class="photo-show-favorite col-md-4">
+              <%= render 'favorite', photo: @photo %>
+            </div>
 
-						<% if @photo.user_id == current_user.id %>
-							<div class="actions-photo-show col-md-8 px-0">
-								<%= link_to 'Edit', edit_photo_path, class: "btn actions-photo-show-edit" %>
-								<%= link_to 'Destroy', photo_path, class: "btn actions-photo-show-destroy", method: :delete, data: {confirm: "Are you sure?"} %>
-							</div>
-						<% end %>
-					</div>
-				</div>
+            <% if @photo.user_id == current_user.id %>
+              <div class="actions-photo-show col-md-8 px-0">
+                <%= link_to 'Edit', edit_photo_path, class: "btn actions-photo-show-edit" %>
+                <%= link_to 'Destroy', photo_path, class: "btn actions-photo-show-destroy", method: :delete, data: {confirm: "Are you sure?"} %>
+              </div>
+            <% end %>
+          </div>
+        </div>
 
-				<div class="field-photo-show">
-					<div class="photo-show-text">
-						<%= @photo.text %>
-					</div>
-				</div>
+        <div class="field-photo-show">
+          <div class="photo-show-text">
+            <%= @photo.text %>
+          </div>
+        </div>
 
-				<div class="field-photo-show">
-					<div class="photo-show-tag">
-						<% @photo.tag_list.each do |tag| %>
-							<span class="photo-show-tag-content"><%= tag %></span>
-						<% end %>
-					</div>
-				</div>
+        <div class="field-photo-show">
+          <div class="photo-show-tag">
+            <% @photo.tag_list.each do |tag| %>
+              <span class="photo-show-tag-content"><%= tag %></span>
+            <% end %>
+          </div>
+        </div>
 
-				<div class="field-photo-show">
-					<div class="photo-show-post-comment">
-						<%= form_with model: [@photo, @comment], remote: true do |f| %>
-							<div id="star">
-								<%= f.hidden_field :star, id: :review_star %>
-							</div>
-							<%= f.text_area :comment, rows: "3", placeholder: "コメントの入力…" %>
+        <div class="field-photo-show">
+          <div class="photo-show-post-comment">
+            <%= form_with model: [@photo, @comment], remote: true do |f| %>
+              <div id="star">
+                <%= f.hidden_field :star, id: :review_star %>
+              </div>
+              <%= f.text_area :comment, rows: "3", placeholder: "コメントの入力…" %>
 
-							<div class="actions-post-comment">
-								<%= f.submit 'Post', class: "btn actions-post-comment-post" %>
-							</div>
-						<% end %>
-					</div>
-				</div>
-			</div>
+              <div class="actions-post-comment">
+                <%= f.submit 'Post', class: "btn actions-post-comment-post" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
 
-			<div class="col-md-7">
-				<div class="photo-show-comment">
-					<%= render 'comment', comments: @comments %>
-				</div>
-			</div>
+      <div class="col-md-7">
+        <div class="photo-show-comment">
+          <%= render 'comment', comments: @comments %>
+        </div>
+      </div>
 
-		</div>
-	</div>
+    </div>
+  </div>
 
 </div>
 
 <script>
-	$('#star').raty({
-		size     : 36,
-		starOff:  '<%= asset_path('star-off.png') %>',
-		starOn : '<%= asset_path('star-on.png') %>',
-		starHalf: '<%= asset_path('star-half.png') %>',
-		scoreName: 'comment[star]',
-		half: true,
-	});
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'comment[star]',
+    half: true,
+  });
 </script>

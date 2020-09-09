@@ -1,13 +1,13 @@
 <div class="container">
 
-	<div class="admin_relationship-follower">
-		<h2 class="admin_relationship-follower-name"><%= @user.name %>'s followers</h2>
+  <div class="admin_relationship-follower">
+    <h2 class="admin_relationship-follower-name"><%= @user.name %>'s followers</h2>
 
-		<table class="admin_follow-table">
+    <table class="admin_follow-table">
 
-			<%= render partial: 'list', collection: @users, as: :user %>
+      <%= render partial: 'list', collection: @users, as: :user %>
 
-		</table>
+    </table>
 
-	</div>
+  </div>
 </div>

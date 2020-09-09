@@ -3,52 +3,52 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .admin_comment-index {
-	margin: 0 auto;
-	padding: 20px 0;
-	width: 85%;
-	background-color: #00000040;
-	border-radius: 10px;
-	font-size: 20px;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 85%;
+  background-color: #00000040;
+  border-radius: 10px;
+  font-size: 20px;
 
-	.admin_comment-index-name {
-		padding: 20px 0 0 50px;
-		color: #fff;
-	}
+  .admin_comment-index-name {
+    padding: 20px 0 0 50px;
+    color: #fff;
+  }
 
-	.admin_comment-index-table {
-		width: 90%;
-		margin: 0 auto;
+  .admin_comment-index-table {
+    width: 90%;
+    margin: 0 auto;
 
-		td {
-			padding: 10px 0;
-		}
+    td {
+      padding: 10px 0;
+    }
 
-		.admin_comment-index-table-image {
-			width: 15%;
-			text-align: center;
+    .admin_comment-index-table-image {
+      width: 15%;
+      text-align: center;
 
-			.admin_comment-index-table-image-content {
-				width: 60%;
-			}
-		}
-		.admin_comment-index-table-name {
-			width: 20%;
-		}
-		.admin_comment-index-table-comment {
-			width: 25%;
-		}
+      .admin_comment-index-table-image-content {
+        width: 60%;
+      }
+    }
+    .admin_comment-index-table-name {
+      width: 20%;
+    }
+    .admin_comment-index-table-comment {
+      width: 25%;
+    }
 
-		.admin_comment-index-table-btn-hide,
-		.admin_comment-index-table-btn-open {
-			width: 100%;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		}
-		.admin_comment-index-table-btn-hide {
-			background: #AEDD7E;
-		}
-		.admin_comment-index-table-btn-open {
-			background: #C3F4F8;
-		}
-	}
+    .admin_comment-index-table-btn-hide,
+    .admin_comment-index-table-btn-open {
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .admin_comment-index-table-btn-hide {
+      background: #AEDD7E;
+    }
+    .admin_comment-index-table-btn-open {
+      background: #C3F4F8;
+    }
+  }
 }

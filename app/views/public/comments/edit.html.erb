@@ -1,46 +1,46 @@
 <div class="container">
 
-	<div class="comment-edit">
+  <div class="comment-edit">
 
-		<h2 class="comment-edit-name">Edit Comment</h2>
+    <h2 class="comment-edit-name">Edit Comment</h2>
 
-		<div class="row">
+    <div class="row">
 
-			<div class="col-md-5">
-				<div class="comment-edit-image">
-					<%= attachment_image_tag @photo, :image, class: "comment-edit-image-content", format: 'jpeg' %>
-				</div>
-			</div>
+      <div class="col-md-5">
+        <div class="comment-edit-image">
+          <%= attachment_image_tag @photo, :image, class: "comment-edit-image-content", format: 'jpeg' %>
+        </div>
+      </div>
 
 
-			<div class="col-md-7">
-				<div class="form-comment-edit">
-					<%= form_with model: [@photo, @comment], local: true do |f| %>
-						<div id="star" class="mx-auto">
-							<%= f.hidden_field :star, id: :review_star %>
-						</div>
-						<%= f.text_area :comment, rows: "3", class: "mx-auto" %>
+      <div class="col-md-7">
+        <div class="form-comment-edit">
+          <%= form_with model: [@photo, @comment], local: true do |f| %>
+            <div id="star" class="mx-auto">
+              <%= f.hidden_field :star, id: :review_star %>
+            </div>
+            <%= f.text_area :comment, rows: "3", class: "mx-auto" %>
 
-						<div class="actions-comment-edit mx-auto my-4">
-							<%= f.submit 'Update', class: "btn actions-comment-edit-update" %>
-						</div>
-					<% end %>
-				</div>
-			</div>
+            <div class="actions-comment-edit mx-auto my-4">
+              <%= f.submit 'Update', class: "btn actions-comment-edit-update" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
 
-		</div>
+    </div>
 
-	</div>
+  </div>
 
 </div>
 
 <script>
-	$('#star').raty({
-		size     : 36,
-		starOff:  '<%= asset_path('star-off.png') %>',
-		starOn : '<%= asset_path('star-on.png') %>',
-		starHalf: '<%= asset_path('star-half.png') %>',
-		scoreName: 'comment[star]',
-		half: true,
-	});
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'comment[star]',
+    half: true,
+  });
 </script>

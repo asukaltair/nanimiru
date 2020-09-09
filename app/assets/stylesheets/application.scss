@@ -19,20 +19,20 @@
 @import "font-awesome";
 
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .background {
-	background-image: image-url("background-image.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 100%;
-	display: flex;
-	flex-flow: column;
-	min-height: 100vh;
-	padding-top: 120px;
+  background-image: image-url("background-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  padding-top: 120px;
     margin-top: -67px;
 }
 
@@ -41,142 +41,142 @@ main {
 }
 
 .navbar {
-	background: #b8dde6;
-	border-bottom: 1px solid #000000;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #b8dde6;
+  border-bottom: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-	.nav-link,
-	.nav-link:hover {
-		color: #6f6f6f;
-		text-decoration: none;
-	}
+  .nav-link,
+  .nav-link:hover {
+    color: #6f6f6f;
+    text-decoration: none;
+  }
 }
 
 footer {
-	background: #d0d0d0;
-	color: #fff;
-    height: 40px;
-    text-align: center;
-    padding-top: 7px;
+  background: #d0d0d0;
+  color: #fff;
+  height: 40px;
+  text-align: center;
+  padding-top: 7px;
 }
 
 .link-login,
 .link-signup,
 .link-forget-password {
-	background-color: #ffffff85;
+  background-color: #ffffff85;
 }
 
 .form-signup,
 .form-login {
-	margin: 0 auto;
-	padding: 20px 0;
-	width: 70%;
-	background-color: #00000040;
-	border-radius: 10px;
-	font-size: 20px;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 70%;
+  background-color: #00000040;
+  border-radius: 10px;
+  font-size: 20px;
 
-	.signup-name,
-	.login-name {
-		padding: 20px 0 0 50px;
-		color: #fff;
-	}
+  .signup-name,
+  .login-name {
+    padding: 20px 0 0 50px;
+    color: #fff;
+  }
 
-	.field-signup-title,
-	.field-login-title {
-		height: 60px;
-		width: 35%;
-		text-align: right;
-	}
-	.field-signup-content,
-	.field-login-content {
-	    padding-left: 50px;
-		width: 65%;
+  .field-signup-title,
+  .field-login-title {
+    height: 60px;
+    width: 35%;
+    text-align: right;
+  }
+  .field-signup-content,
+  .field-login-content {
+      padding-left: 50px;
+    width: 65%;
 
-		input[type="text"],
-		input[type="email"],
-		input[type="password"] {
-			height: 40px;
-			width: 75%;
-			padding: 0 10px;
-			background: rgba(223, 222, 222, 0.81);
-			border: 1px solid #000000;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		}
-	}
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      height: 40px;
+      width: 75%;
+      padding: 0 10px;
+      background: rgba(223, 222, 222, 0.81);
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
 
-	.field-signup-image-show {
-		width: 100%;
-	}
+  .field-signup-image-show {
+    width: 100%;
+  }
 
-	.field-signup-image {
-		text-align: center;
+  .field-signup-image {
+    text-align: center;
 
-    	.field-signup-image-btn {
-			width: 50%;
-			padding: 5px 0;
-			margin-top: 95px;
-			box-sizing: border-box;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-			background: #ddd27e;
-		}
-		.field-signup-image-hide {
-			display: none;
-		}
-	}
+      .field-signup-image-btn {
+      width: 50%;
+      padding: 5px 0;
+      margin-top: 95px;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      background: #ddd27e;
+    }
+    .field-signup-image-hide {
+      display: none;
+    }
+  }
 
-	.actions {
-		padding-top: 27px;
+  .actions {
+    padding-top: 27px;
 
-		.actions-signup,
-		.actions-login {
-		    margin: 15px 0;
+    .actions-signup,
+    .actions-login {
+        margin: 15px 0;
 
-			.actions-signup-register,
-			.actions-login-login,
-			.actions-signup-back,
-			.actions-login-back {
-				box-sizing: border-box;
-				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-			}
-			.actions-signup-register,
-			.actions-login-login {
-				background: #C3F4F8;
-			}
-			.actions-signup-back,
-			.actions-login-back {
-				background: #F2D8D8;
-			}
-			.actions-signup-register,
-			.actions-signup-back {
-				width: 150px;
-			}
-			.actions-login-login,
-			.actions-login-back {
-				width: 180px;
-			}
-		}
-	}
+      .actions-signup-register,
+      .actions-login-login,
+      .actions-signup-back,
+      .actions-login-back {
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+      .actions-signup-register,
+      .actions-login-login {
+        background: #C3F4F8;
+      }
+      .actions-signup-back,
+      .actions-login-back {
+        background: #F2D8D8;
+      }
+      .actions-signup-register,
+      .actions-signup-back {
+        width: 150px;
+      }
+      .actions-login-login,
+      .actions-login-back {
+        width: 180px;
+      }
+    }
+  }
 }
 
 .links-signup,
 .links-login {
-	margin: 30px 50px 20px;
+  margin: 30px 50px 20px;
     text-align: center;
 }
 
 .about {
-	margin: 0 auto;
-	padding: 50px 0;
-	width: 70%;
-	text-align: center;
-	background-color: #00000040;
-	border-radius: 10px;
-	font-size: 20px;
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 70%;
+  text-align: center;
+  background-color: #00000040;
+  border-radius: 10px;
+  font-size: 20px;
 
-	.about-name,
-	.about-description {
-		margin: 50px 0;
-		color: #fff;
-	}
+  .about-name,
+  .about-description {
+    margin: 50px 0;
+    color: #fff;
+  }
 }

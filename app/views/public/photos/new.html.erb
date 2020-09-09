@@ -1,42 +1,42 @@
 <div class="container">
 
-	<div class="form-photo-new">
+  <div class="form-photo-new">
 
-		<h2 class="photo-new-name">New Post</h2>
+    <h2 class="photo-new-name">New Post</h2>
 
-		<%= form_with model: @photo, local: true do |f| %>
+    <%= form_with model: @photo, local: true do |f| %>
 
-			<div class="field-photo-new">
-				<div class="row">
+      <div class="field-photo-new">
+        <div class="row">
 
-					<div class="col-md-5">
-						<div class="field-photo-new-image">
-							<%= attachment_image_tag @photo, :image, id: "photo-new-image", class: "field-photo-new-image-show", format: 'jpeg', fallback: 'no-photo-image.png' %>
-							<%= f.label :image, class: "btn field-photo-new-image-btn" %>
-							<%= f.attachment_field :image, class: "field-photo-new-image-hide" %>
-						</div>
-					</div>
+          <div class="col-md-5">
+            <div class="field-photo-new-image">
+              <%= attachment_image_tag @photo, :image, id: "photo-new-image", class: "field-photo-new-image-show", format: 'jpeg', fallback: 'no-photo-image.png' %>
+              <%= f.label :image, class: "btn field-photo-new-image-btn" %>
+              <%= f.attachment_field :image, class: "field-photo-new-image-hide" %>
+            </div>
+          </div>
 
-					<div class="col-md-7">
-						<div class="field-photo-new-text">
-							<%= f.label :text %> <br>
-							<%= f.text_area :text, rows: "5", placeholder: "テキストの入力…" %>
-						</div>
-						<div class="field-photo-new-tag">
-							<%= f.label :tag_list, "Tag" %> <br>
-							<%= f.text_field :tag_list, placeholder: "e.g.) 海, 山, 夜景", value: @photo.tag_list.join(',') %>
-						</div>
-						<div class="actions-photo-new">
-							<%= f.submit 'Post', class: "btn actions-photo-new-post" %>
-						</div>
-					</div>
+          <div class="col-md-7">
+            <div class="field-photo-new-text">
+              <%= f.label :text %> <br>
+              <%= f.text_area :text, rows: "5", placeholder: "テキストの入力…" %>
+            </div>
+            <div class="field-photo-new-tag">
+              <%= f.label :tag_list, "Tag" %> <br>
+              <%= f.text_field :tag_list, placeholder: "e.g.) 海, 山, 夜景", value: @photo.tag_list.join(',') %>
+            </div>
+            <div class="actions-photo-new">
+              <%= f.submit 'Post', class: "btn actions-photo-new-post" %>
+            </div>
+          </div>
 
-				</div>
-			</div>
+        </div>
+      </div>
 
-		<% end %>
+    <% end %>
 
-	</div>
+  </div>
 
 </div>
 
@@ -44,12 +44,12 @@
 
 <script>
 
-	$('#photo_image').on('change', function (e) {
-	    var reader = new FileReader();
-	    reader.onload = function (e) {
-	        $("#photo-new-image").attr('src', e.target.result);
-	    }
-	    reader.readAsDataURL(e.target.files[0]);
-	});
+  $('#photo_image').on('change', function (e) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+          $("#photo-new-image").attr('src', e.target.result);
+      }
+      reader.readAsDataURL(e.target.files[0]);
+  });
 
 </script>

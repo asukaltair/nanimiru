@@ -1,55 +1,55 @@
 <div class="container">
-	<div class="row">
+  <div class="row">
 
-		<div class="col-md-3">
-			<div class="admin_user-show-user">
-				<div class="admin_user-show-user-image">
-					<%= attachment_image_tag @user, :image, class: "admin_user-image-content", format: 'jpeg', fallback: 'no-user-image.png' %>
-				</div>
-				<div class="admin_user-show-user-name">
-					<%= @user.name %>
-				</div>
-				<div class="admin_user-show-user-introduction">
-					<%= @user.introduction %>
-				</div>
-				<div class="admin_user-show-user-follow">
-					<div class="row">
-						<div class="col-md-4 offset-md-2 px-0">
-							<%= link_to user_followings_path(@user), class: "admin_user-follow-content" do %>
-								<%= @user.follower.count %> <br>
-								followings
-							<% end %>
-						</div>
-						<div class="col-md-4 px-0">
-							<%= link_to user_followers_path(@user), class: "admin_user-follow-content" do %>
-								<%= @user.followed.count %> <br>
-								followers
-							<% end %>
-						</div>
-					</div>
-				</div>
-				<div class="admin_user-show-user-btn">
-					<% if @user.is_active == true %>
-						<!-- putは置換、patchは更新・変更・修正 -->
-						<%= link_to 'Open', admin_user_update_path, method: :put, class: "btn admin_user-btn-open" %>
-					<% else %>
-						<%= link_to 'Hide', admin_user_update_path, method: :put, class: "btn admin_user-btn-hide" %>
-					<% end %>
-				</div>
-			</div>
-		</div>
+    <div class="col-md-3">
+      <div class="admin_user-show-user">
+        <div class="admin_user-show-user-image">
+          <%= attachment_image_tag @user, :image, class: "admin_user-image-content", format: 'jpeg', fallback: 'no-user-image.png' %>
+        </div>
+        <div class="admin_user-show-user-name">
+          <%= @user.name %>
+        </div>
+        <div class="admin_user-show-user-introduction">
+          <%= @user.introduction %>
+        </div>
+        <div class="admin_user-show-user-follow">
+          <div class="row">
+            <div class="col-md-4 offset-md-2 px-0">
+              <%= link_to user_followings_path(@user), class: "admin_user-follow-content" do %>
+                <%= @user.follower.count %> <br>
+                followings
+              <% end %>
+            </div>
+            <div class="col-md-4 px-0">
+              <%= link_to user_followers_path(@user), class: "admin_user-follow-content" do %>
+                <%= @user.followed.count %> <br>
+                followers
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="admin_user-show-user-btn">
+          <% if @user.is_active == true %>
+            <!-- putは置換、patchは更新・変更・修正 -->
+            <%= link_to 'Open', admin_user_update_path, method: :put, class: "btn admin_user-btn-open" %>
+          <% else %>
+            <%= link_to 'Hide', admin_user_update_path, method: :put, class: "btn admin_user-btn-hide" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
-		<div class="col-md-9">
-			<div class="admin_user-show-photo">
-				<div class="row">
-					<% @photos.each do |photo| %>
-						<div class="col-md-3 px-0">
-							<%= attachment_image_tag photo, :image, class: "admin_user-photo-content", format: 'jpeg' %>
-						</div>
-					<% end %>
-				</div>
-			</div>
-		</div>
+    <div class="col-md-9">
+      <div class="admin_user-show-photo">
+        <div class="row">
+          <% @photos.each do |photo| %>
+            <div class="col-md-3 px-0">
+              <%= attachment_image_tag photo, :image, class: "admin_user-photo-content", format: 'jpeg' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
-	</div>
+  </div>
 </div>

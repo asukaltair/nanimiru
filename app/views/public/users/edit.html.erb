@@ -1,67 +1,67 @@
 <div class="container">
 
-	<div class="form-user-edit">
+  <div class="form-user-edit">
 
-		<h2 class="user-edit-name">Edit</h2>
+    <h2 class="user-edit-name">Edit</h2>
 
-		<%= form_with model: @user, url: user_path, local: true do |f| %>
+    <%= form_with model: @user, url: user_path, local: true do |f| %>
 
-			<div class="field-user-edit">
-				<table style="width: 100%;">
-					<tr>
-						<td class="field-user-edit-title"><%= f.label :name %></td>
-						<td class="field-user-edit-content"><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
-					</tr>
-					<tr>
-						<td class="field-user-edit-title"><%= f.label :introduction %></td>
-						<td class="field-user-edit-content"><%= f.text_area :introduction, rows: 3, autofocus: true, autocomplete: "introduction" %></td>
-					</tr>
-					<tr>
-						<td class="field-user-edit-title"><%= f.label :email %></td>
-						<td class="field-user-edit-content"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
-					</tr>
-				</table>
-			</div>
+      <div class="field-user-edit">
+        <table style="width: 100%;">
+          <tr>
+            <td class="field-user-edit-title"><%= f.label :name %></td>
+            <td class="field-user-edit-content"><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+          </tr>
+          <tr>
+            <td class="field-user-edit-title"><%= f.label :introduction %></td>
+            <td class="field-user-edit-content"><%= f.text_area :introduction, rows: 3, autofocus: true, autocomplete: "introduction" %></td>
+          </tr>
+          <tr>
+            <td class="field-user-edit-title"><%= f.label :email %></td>
+            <td class="field-user-edit-content"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+          </tr>
+        </table>
+      </div>
 
-			<div class="field-user-edit mt-3">
-				<div class="row">
-					<div class="col-md-3 offset-md-1">
-						<%= attachment_image_tag @user, :image, id: "user-edit-image", class: "field-user-edit-image-show", format: 'jpeg', fallback: 'no-user-image.png' %>
-					</div>
-					<div class="col-md-3">
-						<div class="field-user-edit-image">
-							<%= f.label :image, class: "btn field-user-edit-image-btn" %>
-							<%= f.attachment_field :image, class: "field-user-edit-image-hide" %>
-						</div>
-					</div>
-					<div class="col-md-4 offset-md-1">
-						<div class="actions">
-							<div class="actions-user-edit">
-								<%= f.submit 'Update', class: "btn actions-user-edit-update" %>
-							</div>
-							<div class="actions-user-edit">
-								<%= link_to "Back", user_path(@user.name), class: "btn actions-user-edit-back" %>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+      <div class="field-user-edit mt-3">
+        <div class="row">
+          <div class="col-md-3 offset-md-1">
+            <%= attachment_image_tag @user, :image, id: "user-edit-image", class: "field-user-edit-image-show", format: 'jpeg', fallback: 'no-user-image.png' %>
+          </div>
+          <div class="col-md-3">
+            <div class="field-user-edit-image">
+              <%= f.label :image, class: "btn field-user-edit-image-btn" %>
+              <%= f.attachment_field :image, class: "field-user-edit-image-hide" %>
+            </div>
+          </div>
+          <div class="col-md-4 offset-md-1">
+            <div class="actions">
+              <div class="actions-user-edit">
+                <%= f.submit 'Update', class: "btn actions-user-edit-update" %>
+              </div>
+              <div class="actions-user-edit">
+                <%= link_to "Back", user_path(@user.name), class: "btn actions-user-edit-back" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<% end %>
+    <% end %>
 
-	</div>
+  </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script>
 
-	$('#user_image').on('change', function (e) {
-	    var reader = new FileReader();
-	    reader.onload = function (e) {
-	        $("#user-edit-image").attr('src', e.target.result);
-	    }
-	    reader.readAsDataURL(e.target.files[0]);
-	});
+  $('#user_image').on('change', function (e) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+          $("#user-edit-image").attr('src', e.target.result);
+      }
+      reader.readAsDataURL(e.target.files[0]);
+  });
 
 </script>

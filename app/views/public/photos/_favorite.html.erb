@@ -1,11 +1,11 @@
 <% if photo.favorited_by?(current_user) %>
-	<%= link_to photo_favorites_path(photo), class: "favorite-icon", method: :delete, remote: true do %>
-		<i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
-		<%= photo.favorites.count %>
-	<% end %>
+  <%= link_to photo_favorites_path(photo), class: "favorite-icon", method: :delete, remote: true do %>
+    <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+    <%= photo.favorites.count %>
+  <% end %>
 <% else %>
-	<%= link_to photo_favorites_path(photo), class: "favorite-icon", method: :post, remote: true do %>
-		<i class="far fa-heart" aria-hidden="true"></i>
-		<%= photo.favorites.count %>
-	<% end %>
+  <%= link_to photo_favorites_path(photo), class: "favorite-icon", method: :post, remote: true do %>
+    <i class="far fa-heart" aria-hidden="true"></i>
+    <%= photo.favorites.count %>
+  <% end %>
 <% end %>

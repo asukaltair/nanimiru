@@ -1,39 +1,39 @@
 <div class="container">
 
-	<div class="admin_users">
-		<h2 class="admin_users-name">Users</h2>
+  <div class="admin_users">
+    <h2 class="admin_users-name">Users</h2>
 
-		<table class="admin_users-table">
-			<% @users.each do |user| %>
-				<tr>
-					<td class="admin_users-table-image">
-						<%= link_to admin_user_path(user) do %>
-							<%= attachment_image_tag user, :image, class: "admin_users-table-image-content", format: 'jpeg', fallback: 'no-user-image.png' %>
-						<% end %>
-					</td>
-					<td class="admin_users-table-name"><%= user.name %></td>
-					<td class="admin_users-table-photo"><%= pluralize(user.photos.count, "photo") %></td>
-					<td class="admin_users-table-follow">
-						<%= link_to admin_user_followings_path(user), class: "admin_table-following" do %>
-							<%= pluralize(user.follower.count, "following") %>
-						<% end %>
-					</td>
-					<td class="admin_users-table-follow">
-						<%= link_to admin_user_followers_path(user), class: "admin_table-follower" do %>
-							<%= pluralize(user.followed.count, "follower") %>
-						<% end %>
-					</td>
-					<td class="admin_users-table-btn">
-						<% if user.is_active == true %>
-							<%= link_to 'Open', admin_user_update_path(user), method: :put, class: "btn admin_users-table-btn-open" %>
-						<% else %>
-							<%= link_to 'Hide', admin_user_update_path(user), method: :put, class: "btn admin_users-table-btn-hide" %>
-						<% end %>
-					</td>
-				</tr>
-			<% end %>
-		</table>
+    <table class="admin_users-table">
+      <% @users.each do |user| %>
+        <tr>
+          <td class="admin_users-table-image">
+            <%= link_to admin_user_path(user) do %>
+              <%= attachment_image_tag user, :image, class: "admin_users-table-image-content", format: 'jpeg', fallback: 'no-user-image.png' %>
+            <% end %>
+          </td>
+          <td class="admin_users-table-name"><%= user.name %></td>
+          <td class="admin_users-table-photo"><%= pluralize(user.photos.count, "photo") %></td>
+          <td class="admin_users-table-follow">
+            <%= link_to admin_user_followings_path(user), class: "admin_table-following" do %>
+              <%= pluralize(user.follower.count, "following") %>
+            <% end %>
+          </td>
+          <td class="admin_users-table-follow">
+            <%= link_to admin_user_followers_path(user), class: "admin_table-follower" do %>
+              <%= pluralize(user.followed.count, "follower") %>
+            <% end %>
+          </td>
+          <td class="admin_users-table-btn">
+            <% if user.is_active == true %>
+              <%= link_to 'Open', admin_user_update_path(user), method: :put, class: "btn admin_users-table-btn-open" %>
+            <% else %>
+              <%= link_to 'Hide', admin_user_update_path(user), method: :put, class: "btn admin_users-table-btn-hide" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
 
-	</div>
+  </div>
 
 </div>
